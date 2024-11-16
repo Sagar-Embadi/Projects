@@ -1,0 +1,6 @@
+.container{
+    background: url('./images/nicholas-green-unsplash-blur.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
