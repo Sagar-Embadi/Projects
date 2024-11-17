@@ -15,7 +15,7 @@ nav{
     background-color: black;
     padding:14px 50px;
     position:fixed;
-    width: 100%;
+    width: 100vw;
     top: 0;
     z-index: 99;
 }
@@ -93,6 +93,7 @@ video{
     margin-bottom: 3rem;
 }
 .night > h1{
+    text-align:center;
     font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 4rem;
@@ -316,6 +317,42 @@ tbody td{
 .plan_1_3 > a:hover{
     color: maroon;
 }
+#section_6{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+.buttons{
+    background-color:#bbdcf3;
+    display: flex;
+    gap: 20px;
+    border-radius: 2rem;
+    padding: 10px;
+}
+.buttons a{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    color: grey;
+}
+.buttons a:hover{
+    box-shadow: 2px 2px 2px grey;
+    background-color: azure;
+    color: goldenrod;
+    border-radius: 2rem;
+    padding: 5px 10px;
+}
+.form-map > iframe{
+    margin-bottom: 40px;
+    width: 50vw;
+    height: 30vw;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 2rem;
+    box-shadow: 10px 10px 10px lightgray,-10px 10px 10px lightgray,-10px 20px 10px lightgray;
+}
 #footer{
     font-size: 1.2rem;
     display: flex;
@@ -434,6 +471,9 @@ tbody td{
         }
         .container{
             flex-direction: column;
+        }
+        .grid_container{
+            grid-template-columns: 1fr;
         }
 
 }

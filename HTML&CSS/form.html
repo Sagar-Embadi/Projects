@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        form > div{
+            display: flex;
+            gap: 20px;
+        }
+        .name{
+            flex-grow: 1;
+        }
+        .email{
+            flex-grow: 1;
+        }
+        form input{
+            padding: 10px;
+            border-radius: 1rem;
+            border: 1px solid gray;
+        }
+        form input:focus{
+            border: 2px solid rgba(0, 0, 255, 0.658);
+        }
+        form input::placeholder, form button{
+            display: inline-block;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div>
+            <input type="text" placeholder="Full name" required class="name">
+        <input type="email" placeholder="Email address" required class="email">
+        </div>
+        <input type="text" placeholder="Company" required class="company">
+        <textarea width="400px" height="300px" class="textarea"></textarea>
+        <button>Send Message</button>
+    </form>
+</body>
+</html>
