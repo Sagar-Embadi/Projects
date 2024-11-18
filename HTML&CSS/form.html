@@ -1,48 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <style>
-        form{
+        form {
             display: flex;
             flex-direction: column;
             gap: 20px;
+            justify-content: center;
+
         }
-        form > div{
+
+        form>div {
             display: flex;
             gap: 20px;
         }
-        .name{
+
+        .name {
             flex-grow: 1;
         }
-        .email{
+
+        .email {
             flex-grow: 1;
         }
-        form input{
+
+        form input {
             padding: 10px;
-            border-radius: 1rem;
+            border-radius: 8px;
             border: 1px solid gray;
         }
-        form input:focus{
+
+        form input:focus {
             border: 2px solid rgba(0, 0, 255, 0.658);
         }
-        form input::placeholder, form button{
+
+        form input::placeholder,
+        form button {
             display: inline-block;
             font-size: 1rem;
         }
+
+        textarea {
+            height: 150px;
+        }
+
+        button {
+            background-color: #EE5007;
+            color: aliceblue;
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 2.4rem;
+            border: 0px;
+            width: 170px;
+            margin: auto;
+        }
     </style>
 </head>
+
 <body>
     <form action="#">
         <div>
             <input type="text" placeholder="Full name" required class="name">
-        <input type="email" placeholder="Email address" required class="email">
+            <input type="email" placeholder="Email address" required class="email">
         </div>
         <input type="text" placeholder="Company" required class="company">
-        <textarea width="400px" height="300px" class="textarea"></textarea>
+        <textarea placeholder="Message" width="400px" height="500px" class="textarea"></textarea>
         <button>Send Message</button>
     </form>
 </body>
+
 </html>
