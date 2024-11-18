@@ -1,6 +1,221 @@
+nav {
+    background-color: black;
+    padding: 10px 50px;
+    z-index: 99;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+.brand-name {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: aliceblue;
+}
+.child2 {
+    display: flex;
+    gap: 20px;
+}
+.child2>a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 1.2rem;
+    margin-bottom: 0%;
+}
+
+.child2>a:hover {
+    color: #EE5007;
+}
+
+.button {
+    display: flex;
+    gap: 20px;
+}
+
+.button>a {
+    background-color: #EE5007;
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 2.4rem
+}
 .container{
     background: url('./images/nicholas-green-unsplash-blur.jpg');
     background-size: cover;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
+}
+.form{
+    margin: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 3rem;
+}
+.form input::placeholder{
+    font-size: 1.2rem;
+}
+.form input{
+    padding: 8px;
+    border-radius: .5rem;
+}
+.form > h1{
+    font-size: 3rem;
+}
+form{
+    text-align: start;
+    margin: 0%;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content:start;
+}
+.row{
+    display: flex;
+    gap: 20px;
+}
+.row > input{
+    flex-grow: 1;
+}
+.row ~ h4{
+    font-size: 1.5rem;
+}
+.row2{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.row2 > p{
+    font-size: 1.5rem;
+}
+textarea{
+    height: 150px;
+    font-size: 1.2rem;
+    border-radius: .5rem;
+    padding: 10px;
+}
+button{
+    margin: auto;
+    width: 150px;
+    padding: 20px;
+    border-radius: 2rem;
+    background-color: #EE5007;
+    color: aliceblue;
+}
+@media (max-width:768px) {
+    nav {
+        padding: 10px;
+    }
+
+    .child2 {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0px;
+        width: 100%;
+        padding-left: 60px;
+        background-color: black;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .checkbox:checked+.child2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .child2 {
+        width: 110%;
+        left: -10px;
+    }
+
+    .button>a {
+        font-size: .8rem;
+    }
+    .form{
+        height: 700px;
+        margin-bottom: 70px;
+    }
+    .form > h1{
+        font-size: 2.5rem;
+    }
+    .row, .row2{
+        flex-direction: column;
+    }
+    .footer_1 {
+        padding: 15px;
+    }
+
+    .footer_1>h1 {
+        font-size: 2rem;
+    }
+
+    .footer_2 {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .links>div {
+        flex-wrap: wrap;
+    }
+
+    .footer_3 {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .footer_3>div {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1024px) {
+    nav {
+        padding: 10px 50px;
+    }
+
+    .child2 {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: -50px;
+        width: 120%;
+        padding-left: 120px;
+        background-color: black;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .checkbox:checked+.child2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer_2 {
+        padding: 10px 40px;
+        flex-direction: column;
+    }
+
+    .footer_3 {
+        padding: 10px 40px;
+    }
 }
