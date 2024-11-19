@@ -95,7 +95,7 @@ nav {
     display: none;
 }
 
-#section_1 {
+#home {
     width: 100vw;
     height: 100vh;
 }
@@ -141,7 +141,7 @@ video {
     color: #EE5007;
 }
 
-#section_2 {
+#about {
     padding: 100px 30px;
     background: url('./images/edward-unsplash-blur.jpg');
     width: 100vw;
@@ -216,14 +216,14 @@ video {
     color: #242121;
 }
 
-#section_3 {
+#artists {
     padding: 80px;
 }
 
-#section_3>h2,
-#section_4>h2,
-#section_5>h2,
-#section_6>h2 {
+#artists>h2,
+#schedule>h2,
+#price>h2,
+#contacts>h2 {
     margin-top: 20px;
     font-size: 3rem;
     font-weight: bold;
@@ -275,7 +275,7 @@ video {
     transition: all 2s linear;
 }
 
-#section_4 {
+#schedule {
     background: url('./images/nainoa-shizuru-unsplash-blur.jpg');
     padding: 80px 100px;
     color: aliceblue;
@@ -348,7 +348,7 @@ tbody td {
     text-shadow: 2px 2px black;
 }
 
-#section_5 {
+#price {
     background-color: #f1f1f1;
     padding: 50px;
 }
@@ -402,7 +402,7 @@ tbody td {
     color: maroon;
 }
 
-#section_6 {
+#contacts {
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -612,7 +612,7 @@ tbody td {
         align-items: center;
     }
 
-    #section_2 {
+    #about {
         padding: 30px;
     }
 
@@ -620,10 +620,10 @@ tbody td {
         flex-direction: column;
     }
 
-    #section_3,
-    #section_4,
-    #section_5,
-    #section_6 {
+    #artists,
+    #schedule,
+    #price,
+    #contacts {
         padding: 50px 0px;
     }
 
@@ -705,11 +705,11 @@ tbody td {
         margin-bottom: 3rem;
     }
 
-    #section_2,
-    #section_3,
-    #section_4,
-    #section_5,
-    #section_6 {
+    #about,
+    #artists,
+    #schedule,
+    #price,
+    #contacts {
         padding: 50px 30px;
     }
 
