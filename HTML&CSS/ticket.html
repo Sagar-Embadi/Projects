@@ -31,7 +31,7 @@
     <section class="container">
         <div class="form">
             <h1>Get started here</h1>
-            <form action="#">
+            <form  >
                 <div class="row">
                     <input type="text" placeholder="Full name" required>
                     <input type="email" placeholder="Email address" required>
@@ -39,18 +39,18 @@
                 <input type="text" placeholder="Phone number" required>
                 <h4>Choose Ticket Type</h4>
                 <div class="row2">
-                    <p><input type="radio" name="plan" id="less" required><label for="less">Early Bird $120</label></p>
-                    <p><input type="radio" name="plan" id="cost" required><label for="cost">Standard $240</label></p>
+                    <p><input type="radio" name="plan" id="less" ><label for="less">Early Bird $120</label></p>
+                    <p><input type="radio" name="plan" id="cost" ><label for="cost">Standard $240</label></p>
                 </div>
                 <input type="number" placeholder="Number of Tickets" required>
-                <textarea>Additional Request</textarea>
+                <textarea required></textarea>
                 <button onclick="showAlert()">Buy Ticket</button>
             </form>
         </div>
     </section>
     <footer id="footer">
         <div class="footer_1">
-            <h1>Festava Live</h1>
+            <h1>Brewers Den</h1>
             <div>
                 <a href="https://x.com/EmbadiSagar"><i class="fa-brands fa-twitter"></i></a>
                 <a href="https://www.instagram.com/sagar_embadi/"><i class="fa-brands fa-instagram"></i></a>
@@ -79,7 +79,7 @@
             </div>
             <div class="location">
                 <h3>Location</h3>
-                <p>Silang Junction South, Tagaytay, Cavite, Philippines</p>
+                <p>Road no 35, Banjara Hills, Hyderabad, TS, India</p>
             </div>
         </div>
         <div class="footer_3">
@@ -93,7 +93,10 @@
     </footer>
     <!-- Below is the Script link for Javascript -->
     <script>
-        function showAlert() {
+        let form=document.querySelector("form")
+        form.addEventListener("submit",showAlert)
+        function showAlert(event) {
+            // event.stopPropagation()
             Swal.fire('Ticket Booked.!', 'Your Ticket is sent to your Email', 'success');
         }
     </script>
