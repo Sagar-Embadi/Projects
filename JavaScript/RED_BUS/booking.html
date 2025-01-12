@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Seat Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .bus {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            gap: 10px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .seat {
+            width: 60px;
+            height: 60px;
+            background-color: #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .seat.available {
+            background-color: #4caf50;
+        }
+        .seat.selected {
+            background-color: #ff9800;
+        }
+        .seat.unavailable {
+            background-color: #f44336;
+            cursor: not-allowed;
+        }
+        .legend {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+        }
+        .legend-item span {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 3px;
+        }
+        .legend-item .available {
+            background-color: #4caf50;
+        }
+        .legend-item .selected {
+            background-color: #ff9800;
+        }
+        .legend-item .unavailable {
+            background-color: #f44336;
+        }
+        .confirm-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .confirm-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <div class="bus" id="bus">
+        <!-- Seats will be dynamically generated here -->
+    </div>
+    <div class="legend">
+        <div class="legend-item"><span class="available"></span>Available</div>
+        <div class="legend-item"><span class="selected"></span>Selected</div>
+        <div class="legend-item"><span class="unavailable"></span>Unavailable</div>
+    </div>
+    <button class="confirm-btn" onclick="confirmSelection()">Confirm Selection</button>
+</div>
+
+<script>
+    const bus = document.getElementById('bus');
+
+    // Mock data for seat availability
+    const seats = [
+        'available', 'available', 'unavailable', 'available', 'available',
+        'available', 'available', 'available', 'unavailable', 'available',
+        'available', 'available', 'available', 'available', 'available',
+        'unavailable', 'available', 'available', 'available', 'available'
+    ];
+
+    // Render seats
+    seats.forEach((status, index) => {
+        const seat = document.createElement('div');
+        seat.classList.add('seat', status);
+        seat.textContent = index + 1;
+        seat.addEventListener('click', () => selectSeat(seat, status));
+        bus.appendChild(seat);
+    });
+
+    // Handle seat selection
+    function selectSeat(seat, status) {
+        if (status === 'unavailable') return;
+        seat.classList.toggle('selected');
+    }
+
+    // Confirm selection
+    function confirmSelection() {
+        const selectedSeats = Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.textContent);
+        alert(`You have selected seats: ${selectedSeats.join(', ')}`);
+    }
+</script>
+
+</body>
+</html>
