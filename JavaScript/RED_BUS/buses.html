@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tickets</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #route_title{
+            padding: 20px;
+            background-color: wheat;
+        }
+        #body{
+            display: flex;
+        }
+        #sidebar{
+            padding: 20px;
+            width:20vw;
+            height: 100vh;
+            background-color: #f1f1f1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        #sidebar > button{
+            padding: 5px;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+        #buslist{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card{
+            display: flex;
+            gap: 30px;
+            width: 80vw;
+            background-color: rgb(172, 220, 239);
+            border: 1px solid grey;
+            padding: 10px;
+        }
+        .card:hover{
+        box-shadow: 5px 5px 5px black;
+        }
+        .card > div{
+            flex-grow: 1;
+            text-align: center;
+            align-content: center;
+            height: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="route_title"></div>
+    <div id="body">
+        <div id="sidebar">
+            <h4>BUS TYPE</h4>
+            <button id="seater">seater</button><br>
+            <button id="sleeper">sleeper</button><br>
+            <button id="AC">AC</button><br>
+            <button id="NonAC">NonAC</button>
+        </div>
+        <div id="buslist"></div>
+    </div>
+    <script src="buses.js"></script>
+</body>
+</html>

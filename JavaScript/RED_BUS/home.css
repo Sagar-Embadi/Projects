@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* box-sizing: border-box; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* NAVBAR */
+header{
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+#left_header, #right_header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+#left_header > img{
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+}
+.redTickets{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 1em 0.625rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 7rem;
+    text-align: center;
+    cursor: pointer;
+}
+.redTickets:hover{
+    background-color: rgb(213, 211, 211);
+}
+.redTickets > img{
+    margin: auto;
+    width: 40px;
+    height: 25px;
+}
+#right_header > p{
+    font-size: 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#right_header i{
+    font-size: 25px;
+    color: rgb(193, 193, 193);
+}
+/* BODY PART */
+main{
+    margin-top: 8rem;
+}
+#routing{
+    background-image: url("https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp");
+    background-size:cover;
+    background-position: -20px 0px;
+    text-align: center;
+    height: 500px;
+    padding: 50px;
+}
+#routing > h1{
+    font-size: 30px;
+}
+#route_selection_outer_div{
+    margin: 80px auto;
+    width: 70vw;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 3rem;
+    display: flex;
+} 
+#route_selection_inner_div1,#route_selection_inner_div2,#route_selection_inner_div3{
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    width: 29%;
+    align-items: center;
+    cursor: pointer;
+}
+#route_selection_inner_div2,#route_selection_inner_div3{
+    border-left: 1px solid grey;
+}
+label{
+    font-size: 30px;
+    color: rgb(90, 87, 87);
+    align-content: center;
+}
+input{
+    border: none;
+    height: 90px;
+    outline: none;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+#route_selection_outer_div > button{
+    border: none;
+    background-color: #d84e55;
+    width: 20%;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#scrollbar{
+    display: flex;
+    overflow: scroll hidden;
+    gap: 1.5rem;
+    scroll-behavior: smooth;
+}
+
+#scrollbar > div{
+    background-color: aquamarine;
+    width: 300px;
+    height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h2{
+    text-align: center;
+    padding: 30px;
+}
+#route{
+    padding: 5px 400px;
+    display: flex;
+    gap: 50px;
+}
+#route > span{
+    width: 200px;
+}
