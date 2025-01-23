@@ -10,7 +10,7 @@ form.addEventListener("submit",(s)=>{
 
     if (user) {
         alert('successful!');
-        location.href="./home.html"
+        location.href="../home/home.html"
     } else {
         alert('Invalid email or password!');
     }

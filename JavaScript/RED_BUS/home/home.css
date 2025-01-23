@@ -1,7 +1,7 @@
 *{
     margin: 0px;
     padding: 0px;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 /* NAVBAR */
@@ -12,7 +12,8 @@ header{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    padding: 10px;
+    height: 6.5rem;
+    padding: 20px ;
     align-items: center;
 }
 #left_header, #right_header{
@@ -33,6 +34,7 @@ header{
     background-color: white;
     border-radius: 0.5rem;
     width: 7rem;
+    height: 5rem;
     text-align: center;
     cursor: pointer;
 }
@@ -43,6 +45,7 @@ header{
     margin: auto;
     width: 40px;
     height: 25px;
+    filter: grayscale(1) brightness(0);
 }
 #right_header > p{
     font-size: 15px;
@@ -56,7 +59,7 @@ header{
 }
 /* BODY PART */
 main{
-    margin-top: 8rem;
+    margin-top: 6.5rem;
 }
 #routing{
     background-image: url("https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp");
@@ -111,14 +114,12 @@ input{
     font-size: 20px;
     font-weight: bolder;
 }
-
 #scrollbar{
     display: flex;
     overflow: scroll hidden;
     gap: 1.5rem;
     scroll-behavior: smooth;
 }
-
 #scrollbar > div{
     background-color: aquamarine;
     width: 300px;

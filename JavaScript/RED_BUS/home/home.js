@@ -9,6 +9,8 @@ busTicket.addEventListener("click",()=>{
   busTicket.style.backgroundColor="#d84e55"
   trainTicket.style.backgroundColor="white"
   busData.style.display="block"
+  trainTicket.querySelector("#trainLogo").style.filter="grayscale(1) brightness(0)"
+  busTicket.querySelector("#busLogo").style.filter="brightness(0) invert(1)"
   trainData.style.display="none"
 })
 
@@ -17,7 +19,12 @@ trainTicket.addEventListener("click",()=>{
   busTicket.style.backgroundColor="white"
   trainData.style.display="block"
   busData.style.display="none"
+  trainTicket.querySelector("#trainLogo").style.filter="brightness(0) invert(1)"
+  busTicket.querySelector("#busLogo").style.filter="grayscale(1) brightness(0)"
 })
+// Set the input's default value to today's date
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('date').value = today;
 
 let data =[
     {
@@ -300,7 +307,6 @@ let data =[
         }
       ]
     },
-
     {
       "origin": "vijayawada",
       "destination": "visakhapatnam",
@@ -582,52 +588,6 @@ let data =[
       ]
     },
     {
-      "origin": "vijayawada",
-      "destination": "visakhapatnam",
-      "buses": [
-        {
-          "bus_id": "B017",
-          "operator": "TSRTC",
-          "type": "AC Seater",
-          "departure_time": "05:00",
-          "arrival_time": "10:00",
-          "price": 600
-        },
-        {
-          "bus_id": "B018",
-          "operator": "Orange Travels",
-          "type": "Non-AC Sleeper",
-          "departure_time": "06:30",
-          "arrival_time": "11:30",
-          "price": 500
-        },
-        {
-          "bus_id": "B019",
-          "operator": "Morning Star",
-          "type": "AC Sleeper",
-          "departure_time": "08:00",
-          "arrival_time": "13:00",
-          "price": 750
-        },
-        {
-          "bus_id": "B020",
-          "operator": "VRL Travels",
-          "type": "Non-AC Seater",
-          "departure_time": "09:30",
-          "arrival_time": "14:30",
-          "price": 450
-        },
-        {
-          "bus_id": "B021",
-          "operator": "Kaveri Travels",
-          "type": "AC Sleeper",
-          "departure_time": "11:00",
-          "arrival_time": "16:00",
-          "price": 800
-        }
-      ]
-    },
-    {
       "origin": "visakhapatnam",
       "destination": "vijayawada",
       "buses": [
@@ -672,331 +632,206 @@ let data =[
           "price": 850
         }
       ]
+    },
+    {
+    "origin": "hyderabad",
+    "destination": "bangalore",
+    "buses": [
+      {
+        "bus_id": "B001",
+        "operator": "ABC Travels",
+        "type": "AC Sleeper",
+        "departure_time": "22:00",
+        "arrival_time": "06:00",
+        "price": 800
+      },
+      {
+        "bus_id": "B002",
+        "operator": "XYZ Travels",
+        "type": "Non-AC Seater",
+        "departure_time": "23:00",
+        "arrival_time": "07:30",
+        "price": 600
+      },
+      {
+        "bus_id": "B003",
+        "operator": "PQR Travels",
+        "type": "AC Seater",
+        "departure_time": "21:00",
+        "arrival_time": "05:30",
+        "price": 750
+      },
+      {
+        "bus_id": "B004",
+        "operator": "MNO Travels",
+        "type": "Volvo Multi-Axle",
+        "departure_time": "20:30",
+        "arrival_time": "04:30",
+        "price": 900
+      }
+    ]
+    },
+    {
+    "origin": "bangalore",
+    "destination": "hyderabad",
+    "buses": [
+      {
+        "bus_id": "B001",
+        "operator": "ABC Travels",
+        "type": "AC Sleeper",
+        "departure_time": "22:00",
+        "arrival_time": "06:00",
+        "price": 800
+      },
+      {
+        "bus_id": "B002",
+        "operator": "XYZ Travels",
+        "type": "Non-AC Seater",
+        "departure_time": "23:00",
+        "arrival_time": "07:30",
+        "price": 600
+      },
+      {
+        "bus_id": "B003",
+        "operator": "PQR Travels",
+        "type": "AC Seater",
+        "departure_time": "21:00",
+        "arrival_time": "05:30",
+        "price": 750
+      },
+      {
+        "bus_id": "B004",
+        "operator": "MNO Travels",
+        "type": "Volvo Multi-Axle",
+        "departure_time": "20:30",
+        "arrival_time": "04:30",
+        "price": 900
+      }
+    ]
+    },
+    {
+      "origin": "guntur",
+      "destination": "hyderabad",
+      "buses": [
+        {
+          "bus_id": "B009",
+          "operator": "ST Travels",
+          "type": "AC Sleeper",
+          "departure_time": "23:00",
+          "arrival_time": "02:00",
+          "price": 400
+        },
+        {
+          "bus_id": "B010",
+          "operator": "AP Express",
+          "type": "Non-AC Seater",
+          "departure_time": "21:00",
+          "arrival_time": "00:00",
+          "price": 300
+        },
+        {
+          "bus_id": "B011",
+          "operator": "FastTrack Travels",
+          "type": "AC Seater",
+          "departure_time": "22:00",
+          "arrival_time": "01:00",
+          "price": 450
+        },
+        {
+          "bus_id": "B012",
+          "operator": "City Connect",
+          "type": "Volvo Multi-Axle",
+          "departure_time": "20:30",
+          "arrival_time": "23:30",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "origin": "hyderabad",
+      "destination": "guntur",
+      "buses": [
+        {
+          "bus_id": "B009",
+          "operator": "ST Travels",
+          "type": "AC Sleeper",
+          "departure_time": "23:00",
+          "arrival_time": "02:00",
+          "price": 400
+        },
+        {
+          "bus_id": "B010",
+          "operator": "AP Express",
+          "type": "Non-AC Seater",
+          "departure_time": "21:00",
+          "arrival_time": "00:00",
+          "price": 300
+        },
+        {
+          "bus_id": "B011",
+          "operator": "FastTrack Travels",
+          "type": "AC Seater",
+          "departure_time": "22:00",
+          "arrival_time": "01:00",
+          "price": 450
+        },
+        {
+          "bus_id": "B012",
+          "operator": "City Connect",
+          "type": "Volvo Multi-Axle",
+          "departure_time": "20:30",
+          "arrival_time": "23:30",
+          "price": 500
+        }
+      ]
+    },
+    {
+      "origin": "vijayawada",
+      "destination": "hyderabad",
+      "buses": [
+        {
+          "bus_id": "B013",
+          "operator": "Raj Travels",
+          "type": "AC Sleeper",
+          "departure_time": "18:00",
+          "arrival_time": "22:00",
+          "price": 700
+        },
+        {
+          "bus_id": "B014",
+          "operator": "AP Express",
+          "type": "Non-AC Seater",
+          "departure_time": "19:00",
+          "arrival_time": "23:30",
+          "price": 500
+        },
+        {
+          "bus_id": "B015",
+          "operator": "FastLine Travels",
+          "type": "AC Seater",
+          "departure_time": "20:00",
+          "arrival_time": "00:30",
+          "price": 650
+        },
+        {
+          "bus_id": "B016",
+          "operator": "Pink City Express",
+          "type": "Volvo Multi-Axle",
+          "departure_time": "17:00",
+          "arrival_time": "21:30",
+          "price": 800
+        },
+        {
+          "bus_id": "B017",
+          "operator": "Comfort Ride",
+          "type": "AC Sleeper",
+          "departure_time": "21:00",
+          "arrival_time": "01:30",
+          "price": 750
+        }
+      ]
     }
-  ]
-
-// let data=[
-//       {
-//         "origin": "hyderabad",
-//         "destination": "bangalore",
-//         "buses": [
-//           {
-//             "bus_id": "B001",
-//             "operator": "ABC Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "22:00",
-//             "arrival_time": "06:00",
-//             "price": 800
-//           },
-//           {
-//             "bus_id": "B002",
-//             "operator": "XYZ Travels",
-//             "type": "Non-AC Seater",
-//             "departure_time": "23:00",
-//             "arrival_time": "07:30",
-//             "price": 600
-//           },
-//           {
-//             "bus_id": "B003",
-//             "operator": "PQR Travels",
-//             "type": "AC Seater",
-//             "departure_time": "21:00",
-//             "arrival_time": "05:30",
-//             "price": 750
-//           },
-//           {
-//             "bus_id": "B004",
-//             "operator": "MNO Travels",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "20:30",
-//             "arrival_time": "04:30",
-//             "price": 900
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "bangalore",
-//         "destination": "hyderabad",
-//         "buses": [
-//           {
-//             "bus_id": "B001",
-//             "operator": "ABC Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "22:00",
-//             "arrival_time": "06:00",
-//             "price": 800
-//           },
-//           {
-//             "bus_id": "B002",
-//             "operator": "XYZ Travels",
-//             "type": "Non-AC Seater",
-//             "departure_time": "23:00",
-//             "arrival_time": "07:30",
-//             "price": 600
-//           },
-//           {
-//             "bus_id": "B003",
-//             "operator": "PQR Travels",
-//             "type": "AC Seater",
-//             "departure_time": "21:00",
-//             "arrival_time": "05:30",
-//             "price": 750
-//           },
-//           {
-//             "bus_id": "B004",
-//             "operator": "MNO Travels",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "20:30",
-//             "arrival_time": "04:30",
-//             "price": 900
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "karimnagar",
-//         "destination": "hyderabad",
-//         "buses": [
-//           {
-//             "bus_id": "B005",
-//             "operator": "PQR Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "5:00",
-//             "arrival_time": "8:30",
-//             "price": 900
-//           },
-//           {
-//             "bus_id": "B006",
-//             "operator": "XYZ Travels",
-//             "type": "Non-AC Seater",
-//             "departure_time": "8:00",
-//             "arrival_time": "12:00",
-//             "price": 600
-//           },
-//           {
-//             "bus_id": "B007",
-//             "operator": "ABC Travels",
-//             "type": "AC Seater",
-//             "departure_time": "23:00",
-//             "arrival_time": "2:00",
-//             "price": 750
-//           },
-//           {
-//             "bus_id": "B008",
-//             "operator": "LMN Travels",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "14:30",
-//             "arrival_time": "17:30",
-//             "price": 800
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "hyderabad",
-//         "destination": "karimnagar",
-//         "buses": [
-//           {
-//             "bus_id": "B005",
-//             "operator": "PQR Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "5:00",
-//             "arrival_time": "8:30",
-//             "price": 900
-//           },
-//           {
-//             "bus_id": "B006",
-//             "operator": "XYZ Travels",
-//             "type": "Non-AC Seater",
-//             "departure_time": "8:00",
-//             "arrival_time": "12:00",
-//             "price": 600
-//           },
-//           {
-//             "bus_id": "B007",
-//             "operator": "ABC Travels",
-//             "type": "AC Seater",
-//             "departure_time": "23:00",
-//             "arrival_time": "2:00",
-//             "price": 750
-//           },
-//           {
-//             "bus_id": "B008",
-//             "operator": "LMN Travels",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "14:30",
-//             "arrival_time": "17:30",
-//             "price": 800
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "guntur",
-//         "destination": "hyderabad",
-//         "buses": [
-//           {
-//             "bus_id": "B009",
-//             "operator": "ST Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "23:00",
-//             "arrival_time": "02:00",
-//             "price": 400
-//           },
-//           {
-//             "bus_id": "B010",
-//             "operator": "AP Express",
-//             "type": "Non-AC Seater",
-//             "departure_time": "21:00",
-//             "arrival_time": "00:00",
-//             "price": 300
-//           },
-//           {
-//             "bus_id": "B011",
-//             "operator": "FastTrack Travels",
-//             "type": "AC Seater",
-//             "departure_time": "22:00",
-//             "arrival_time": "01:00",
-//             "price": 450
-//           },
-//           {
-//             "bus_id": "B012",
-//             "operator": "City Connect",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "20:30",
-//             "arrival_time": "23:30",
-//             "price": 500
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "hyderabad",
-//         "destination": "guntur",
-//         "buses": [
-//           {
-//             "bus_id": "B009",
-//             "operator": "ST Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "23:00",
-//             "arrival_time": "02:00",
-//             "price": 400
-//           },
-//           {
-//             "bus_id": "B010",
-//             "operator": "AP Express",
-//             "type": "Non-AC Seater",
-//             "departure_time": "21:00",
-//             "arrival_time": "00:00",
-//             "price": 300
-//           },
-//           {
-//             "bus_id": "B011",
-//             "operator": "FastTrack Travels",
-//             "type": "AC Seater",
-//             "departure_time": "22:00",
-//             "arrival_time": "01:00",
-//             "price": 450
-//           },
-//           {
-//             "bus_id": "B012",
-//             "operator": "City Connect",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "20:30",
-//             "arrival_time": "23:30",
-//             "price": 500
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "hyderabad",
-//         "destination": "vijayawada",
-//         "buses": [
-//           {
-//             "bus_id": "B013",
-//             "operator": "Raj Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "18:00",
-//             "arrival_time": "22:00",
-//             "price": 700
-//           },
-//           {
-//             "bus_id": "B014",
-//             "operator": "AP Express",
-//             "type": "Non-AC Seater",
-//             "departure_time": "19:00",
-//             "arrival_time": "23:30",
-//             "price": 500
-//           },
-//           {
-//             "bus_id": "B015",
-//             "operator": "FastLine Travels",
-//             "type": "AC Seater",
-//             "departure_time": "20:00",
-//             "arrival_time": "00:30",
-//             "price": 650
-//           },
-//           {
-//             "bus_id": "B016",
-//             "operator": "Pink City Express",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "17:00",
-//             "arrival_time": "21:30",
-//             "price": 800
-//           },
-//           {
-//             "bus_id": "B017",
-//             "operator": "Comfort Ride",
-//             "type": "AC Sleeper",
-//             "departure_time": "21:00",
-//             "arrival_time": "01:30",
-//             "price": 750
-//           }
-//         ]
-//       },
-//       {
-//         "origin": "vijayawada",
-//         "destination": "hyderabad",
-//         "buses": [
-//           {
-//             "bus_id": "B013",
-//             "operator": "Raj Travels",
-//             "type": "AC Sleeper",
-//             "departure_time": "18:00",
-//             "arrival_time": "22:00",
-//             "price": 700
-//           },
-//           {
-//             "bus_id": "B014",
-//             "operator": "AP Express",
-//             "type": "Non-AC Seater",
-//             "departure_time": "19:00",
-//             "arrival_time": "23:30",
-//             "price": 500
-//           },
-//           {
-//             "bus_id": "B015",
-//             "operator": "FastLine Travels",
-//             "type": "AC Seater",
-//             "departure_time": "20:00",
-//             "arrival_time": "00:30",
-//             "price": 650
-//           },
-//           {
-//             "bus_id": "B016",
-//             "operator": "Pink City Express",
-//             "type": "Volvo Multi-Axle",
-//             "departure_time": "17:00",
-//             "arrival_time": "21:30",
-//             "price": 800
-//           },
-//           {
-//             "bus_id": "B017",
-//             "operator": "Comfort Ride",
-//             "type": "AC Sleeper",
-//             "departure_time": "21:00",
-//             "arrival_time": "01:30",
-//             "price": 750
-//           }
-//         ]
-//       }
-//     ]
+]
     
 let route_selection=document.getElementById("route_selection")
 route_selection.addEventListener("submit",(e)=>{
@@ -1010,7 +845,7 @@ route_selection.addEventListener("submit",(e)=>{
   if((data.find(x=>x.destination==to) && data.find(x=>x.origin==from))){
     data.filter(x=>{
       if(x.origin===from && x.destination===to){
-        location.href="./buses.html"
+        location.href="../buses/buses.html"
         localStorage.setItem("busData",JSON.stringify(x))
       }})
   }else{

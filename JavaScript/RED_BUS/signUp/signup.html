@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SignUp Page</title>
     <link rel="stylesheet" href="./sign_login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
     <div class="container">
         <form id="register">
             <h1>Sign Up</h1>
+            <label for="name">User Name</label>
+            <input type="text" id="name" placeholder="User Name" />
+            <p id="nameError"></p>
             <label for="email">Email</label>
-            <input type="email" id="email" required placeholder="Enter your email" />
+            <input type="text" id="email" placeholder="Email" />
+            <p id="emailError"></p>
             <label for="password">Password</label>
-            <input type="password" id="password" required placeholder="Enter your password" />
+            <input type="password" id="password" placeholder="Password" />
+            <p id="passError"></p>
             <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" required placeholder="Confirm your password" />
-            <button class="button">Sign Up</button>
-            Already have an account? <a href="login.html">Log In</a>
+            <input type="password" id="confirm-password" placeholder="Confirm Password" />
+            <p id="cPassError"></p>
+            <button type="submit" class="button">Sign Up</button>
+            Already have an account? <a href="../logIn/login.html">Log In</a>
         </form>
     </div>
     <script src="signup.js"></script>

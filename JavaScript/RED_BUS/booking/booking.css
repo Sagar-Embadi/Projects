@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.topMainContainer {
+    padding: 50px 100px;
+    display: flex;
+}
+
+.seatcontainer {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.priceContainer {
+    width: 30%;
+}
+
+#bus_layout {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    /* 4 seats + aisle */
+    row-gap: 5px;
+    justify-content: center;
+}
+
+.seat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.seat:hover {
+    background-color: #e6f7ff;
+
+}
+
+.seat.selected {
+    background-color: #28a745;
+    color: #fff;
+    border-color: #28a745;
+}
+
+.seat.unavailable {
+    background-color: #6c757d;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.aisle {
+    width: 20px;
+}
+
+.legend {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend .box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend .available {
+    background-color: #fff;
+    border: 2px solid #ccc;
+}
+
+.legend .selected {
+    background-color: #28a745;
+    border: 2px solid #28a745;
+}
+
+.legend .unavailable {
+    background-color: #6c757d;
+    border: 2px solid #6c757d;
+}

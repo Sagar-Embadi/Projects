@@ -2,7 +2,6 @@
     margin: 0px;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -16,7 +15,7 @@ body {
 .container {
     align-content: center;
     width: 450px;
-    height: 400px;
+    height: auto;
     background: linear-gradient(45deg, rgb(135, 13, 13), rgb(255, 27, 27), rgb(135, 13, 13));
     padding: 30px;
     border-radius: 10px;
@@ -39,7 +38,9 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
+p{
+    color: rgb(247, 215, 72);
+}
 .button {
     width: 100%;
     padding: 10px;

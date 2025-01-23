@@ -5,7 +5,7 @@ let busData= JSON.parse(localStorage.getItem("busData"))
 
 console.log(busData);
 
-route_title.innerHTML=`<h3>${busData.origin.toUpperCase()} > > > > > ${busData.destination.toUpperCase()}</h3>`
+route_title.innerHTML=`<h3>${busData.origin.toUpperCase()} &emsp; <i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i>&emsp; ${busData.destination.toUpperCase()}</h3>`
 
 let seater = document.getElementById("seater")
 let sleeper = document.getElementById("sleeper")
@@ -38,38 +38,10 @@ function buses(type=null){
         `
         busList.appendChild(card)
         card.querySelector("#booking").addEventListener("click",()=>{
-            location.href="./booking.html"
+            location.href="../booking/booking.html"
             localStorage.setItem("seatInfo",JSON.stringify(x))
         })
     })
 }
 
 buses()
-
-
-
-// arrData.filter(x=>{
-//         let card=document.createElement("div")
-//         card.innerHTML=`
-//         <span>${x.operator}</span>
-//         <span>${x.arrival_time}</span>
-//         <span>${x.departure_time}</span>
-//         <span>${x.price}</span>
-//         `
-//         busList.appendChild(card)
-//     })
-// seater.addEventListener("click",()=>{
-//     busList.innerHTML=""
-//     arrData.filter(x=>{
-//         if(x.type.includes("Seater")){
-//             let card=document.createElement("div")
-//             card.innerHTML=`
-//             <span>${x.operator}</span>
-//             <span>${x.arrival_time}</span>
-//             <span>${x.departure_time}</span>
-//             <span>${x.price}</span>
-//             `
-//             busList.appendChild(card)
-//         }
-//     })
-// })
