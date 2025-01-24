@@ -4,8 +4,8 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -79,12 +79,12 @@ form.addEventListener("submit",(s)=>{
       cPassError.textContent=""
     }
     const allUsers=JSON.parse(localStorage.getItem("users")) || [];
-    if (allUsers.find(user => user.email === emailValue)) {
-      emailError.textContent="User with this email already exits"
-      isValid=false
-    }else{
-      emailError.textContent=""
-    }
+    // if (allUsers.find(user => user.email === emailValue)) {
+    //   emailError.textContent="User with this email already exits"
+    //   isValid=false
+    // }else{
+    //   emailError.textContent=""
+    // }
     
     if(isValid){
       console.log("success");
@@ -94,15 +94,28 @@ form.addEventListener("submit",(s)=>{
         text: "You clicked the button!",
         icon: "success"
       });
-      
       name.value=""
       email.value =""
       password.value =""
       confirmPassword.value =""
       
-      allUsers.push({name:nameValue,email:emailValue,password:passValue,confirmPassword:cPassValue})
-      localStorage.setItem("users",JSON.stringify(allUsers))
+    //   allUsers.push({name:nameValue,email:emailValue,password:passValue,confirmPassword:cPassValue})
+    //   localStorage.setItem("users",JSON.stringify(allUsers))
       
-      location.href="../logIn/login.html"
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, emailValue, passValue)
+        .then((userCredential) => {
+            // Signed up 
+            const user = userCredential.user;
+            location.href="../logIn/login.html"
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // ..
+        });
+
+      
     }
   })

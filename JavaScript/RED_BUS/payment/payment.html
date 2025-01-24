@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <div id="navRoute">HYD --- KNR</div>
+        <div class="navTimer">
+            <span>Please Pay Within:</span> 
+            <span>⌛</span>
+            <span id="timer"></span>
+            <span>minutes</span>
+        </div>
+    </div>
+    <div id="main">
+        <div class="leftMain">
+            <div class="coupon">
+
+            </div>
+            <div class="Payment_methods">
+                <h2>Cards</h2>
+                <div class="upi_payments">
+                    <h4>UPI PAYMENT USING PHONEPE / GPAY ETC..</h4>
+                    <div class="qr_Code">Pay through QR code</div>
+                    <div class="upi_id">Pay through UPI ID</div>
+                </div>
+                <div class="other_methods">
+                    <div class="credit_card"></div>
+                    <div class="debit_card"></div>
+                    <div class="net_baking"></div>
+                </div>
+            </div>
+        </div>
+        <div class="rightMain">
+            <div id="priceCard">
+                <h3>Boarding & Dropping</h3>
+                <div class="pickup_drop">
+                  <div class="icon">|<br>|<br>|<br>|</div>
+                  <div class="routeDiv">
+                    <div class="pickup">
+                      <span id="pickup"></span>
+                      <span id="arrival_time"></span>
+                    </div>
+                    <div class="drop">
+                      <span id="drop"></span>
+                      <span id="departure_time"></span>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="seatNumbers">
+                  <span >Seat NO:</span>
+                  <span id="seatNo"></span>
+                </div>
+                <hr>
+                <div class="fareDetails">
+                  <h3>Fare Details</h3>
+                  <div class="amounting">
+                    <span class="amount">
+                      Amount:
+                    </span>
+                    <span id="price"></span>
+                  </div>
+                </div>
+                <button id="bookingBtn">Book Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

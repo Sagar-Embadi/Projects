@@ -3,8 +3,6 @@ let sidebar=document.getElementById("sidebar")
 let busList = document.getElementById("buslist")
 let busData= JSON.parse(localStorage.getItem("busData"))
 
-console.log(busData);
-
 route_title.innerHTML=`<h3>${busData.origin.toUpperCase()} &emsp; <i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i>&emsp; ${busData.destination.toUpperCase()}</h3>`
 
 let seater = document.getElementById("seater")
@@ -22,9 +20,6 @@ let arrData=busData.buses
 function buses(type=null){
 
     let filteredData= type ? res=arrData.filter(x=> x.type.includes(type)) : arrData
-
-    console.log(filteredData)
-
     busList.innerHTML=""
 
     filteredData.forEach(x=>{
