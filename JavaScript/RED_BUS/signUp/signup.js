@@ -1,3 +1,25 @@
+// let c1 = document.getElementById("container1");
+// let c2 = JSON.stringify(c1)
+// export {c2}
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+apiKey: "AIzaSyBnmZOcT9K4TIB0G1axNCuZSngnup0d3vg",
+authDomain: "red-bus-4d7c8.firebaseapp.com",
+projectId: "red-bus-4d7c8",
+storageBucket: "red-bus-4d7c8.firebasestorage.app",
+messagingSenderId: "1098013578941",
+appId: "1:1098013578941:web:af5e34b65ae200c88b89d4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 let form=document.getElementById("register")
 
 form.addEventListener("submit",(s)=>{
@@ -51,7 +73,7 @@ form.addEventListener("submit",(s)=>{
     }
   
     if(passValue !== cPassValue){
-      cPassError.textContent="passwords doesnot matched"
+      cPassError.textContent="passwords doesn't matched"
       isValid=false
     }else{
       cPassError.textContent=""
@@ -72,6 +94,7 @@ form.addEventListener("submit",(s)=>{
         text: "You clicked the button!",
         icon: "success"
       });
+      
       name.value=""
       email.value =""
       password.value =""
