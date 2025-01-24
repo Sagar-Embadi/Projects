@@ -1,11 +1,7 @@
-// let c1 = document.getElementById("container1");
-// let c2 = JSON.stringify(c1)
-// export {c2}
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -78,7 +74,8 @@ form.addEventListener("submit",(s)=>{
     }else{
       cPassError.textContent=""
     }
-    const allUsers=JSON.parse(localStorage.getItem("users")) || [];
+
+    // const allUsers=JSON.parse(localStorage.getItem("users")) || [];
     // if (allUsers.find(user => user.email === emailValue)) {
     //   emailError.textContent="User with this email already exits"
     //   isValid=false
@@ -87,35 +84,33 @@ form.addEventListener("submit",(s)=>{
     // }
     
     if(isValid){
-      console.log("success");
-      
-      Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
-        icon: "success"
-      });
+      // console.log("success");
       name.value=""
       email.value =""
       password.value =""
       confirmPassword.value =""
-      
-    //   allUsers.push({name:nameValue,email:emailValue,password:passValue,confirmPassword:cPassValue})
-    //   localStorage.setItem("users",JSON.stringify(allUsers))
-      
+
       const auth = getAuth();
       createUserWithEmailAndPassword(auth, emailValue, passValue)
         .then((userCredential) => {
             // Signed up 
+            Swal.fire({
+              title: "Sign-Up Successful",
+              text: "You may log in now..",
+              icon: "success"
+            });
             const user = userCredential.user;
             location.href="../logIn/login.html"
-            // ...
         })
         .catch((error) => {
+          // Sign up fail
+          Swal.fire({
+            title: "Sign-Up Failed",
+            text: "Enter correct Email/Password",
+            icon: "error"
+          });
             const errorCode = error.code;
             const errorMessage = error.message;
-            // ..
         });
-
-      
     }
-  })
+})
