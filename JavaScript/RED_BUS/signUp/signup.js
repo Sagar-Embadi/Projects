@@ -106,7 +106,7 @@ form.addEventListener("submit",(s)=>{
           // Sign up fail
           Swal.fire({
             title: "Sign-Up Failed",
-            text: "Enter correct Email/Password",
+            text: "User Already Exists",
             icon: "error"
           });
             const errorCode = error.code;
