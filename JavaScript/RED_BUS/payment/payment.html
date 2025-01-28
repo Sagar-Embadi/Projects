@@ -1,73 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="navbar">
-        <div id="navRoute">HYD --- KNR</div>
-        <div class="navTimer">
-            <span>Please Pay Within:</span> 
-            <span>⌛</span>
-            <span id="timer"></span>
-            <span>minutes</span>
-        </div>
-    </div>
-    <div id="main">
-        <div class="leftMain">
-            <div class="coupon">
 
-            </div>
-            <div class="Payment_methods">
-                <h2>Cards</h2>
-                <div class="upi_payments">
-                    <h4>UPI PAYMENT USING PHONEPE / GPAY ETC..</h4>
-                    <div class="qr_Code">Pay through QR code</div>
-                    <div class="upi_id">Pay through UPI ID</div>
-                </div>
-                <div class="other_methods">
-                    <div class="credit_card"></div>
-                    <div class="debit_card"></div>
-                    <div class="net_baking"></div>
-                </div>
-            </div>
-        </div>
-        <div class="rightMain">
-            <div id="priceCard">
-                <h3>Boarding & Dropping</h3>
-                <div class="pickup_drop">
-                  <div class="icon">|<br>|<br>|<br>|</div>
-                  <div class="routeDiv">
-                    <div class="pickup">
-                      <span id="pickup"></span>
-                      <span id="arrival_time"></span>
-                    </div>
-                    <div class="drop">
-                      <span id="drop"></span>
-                      <span id="departure_time"></span>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <div class="seatNumbers">
-                  <span >Seat NO:</span>
-                  <span id="seatNo"></span>
-                </div>
-                <hr>
-                <div class="fareDetails">
-                  <h3>Fare Details</h3>
-                  <div class="amounting">
-                    <span class="amount">
-                      Amount:
-                    </span>
-                    <span id="price"></span>
-                  </div>
-                </div>
-                <button id="bookingBtn">Book Now</button>
-            </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="payment.css">
+  <script src="https://kit.fontawesome.com/ea713ed858.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navRoute">
+      <span id="pickup">HYDERABAD</span>
+      <span>
+        <i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i>
+      </span>
+      </span>
+      <span id="droping">KARIMNAGAR</span>
     </div>
+    <div class="navTimer">
+  Please Pay Within:</span>
+  <i class="fa-regular fa-clock"></i></span>
+      <span id="timer"></span>
+  minutes</span>
+    </div>
+  </div>
+  <div id="main">
+    <div class="leftMain">
+      <div class="couponcard">
+        <label for="coupon"><i class="fa-solid fa-ticket"></i> Have a Coupon Code? </label>
+        <input type="text" placeholder="ENTER OFFER CODE">
+      </div>
+      <div class="Payment_methods">
+        <h2>Choose Payment Methods</h2>
+        <div class="upi_payments">
+          <h4>UPI PAYMENT USING PHONE-PE / G-PAY ETC...</h4>
+          <div class="payments">
+            <div class="qr_code">
+              <input type="radio" name="upi" id="qr_code">
+              <label for="qr_code">Pay through QR code <img src="https://st.redbus.in/paas/images/v2/UPI.png" alt="UPI"></label>
+              <div class="lorem">
+                <p>SCAN QR CODE AND PAY</p>
+                <div class="scan_pay">
+                  <div class="qr">
+                    <img src="./Screenshot_25-1-2025_124517_qr.io.jpeg" alt="QR CODE">
+                    <button>GENERATE QR CODE & PAY</button>
+                    <p>Generate QR code, scan it with any UPI App</p>
+                  </div>
+                  <div class="usage">
+                    <h3>HOW THIS WORK</h3>
+                    <p>1. Open UPI APP in your phone</p>
+                    <p>2. Scan this QR code in your selected UPI App</p>
+                    <p>3. Proceed to payment & enter UPI PIN</p>
+                    <div class="e_ticket">
+                      <p><i class="fa-solid fa-mobile-screen"></i></p>
+                      <p>The e-ticket will be automatically sent to you by SMS and email, once the payment is confirmed.</p>
+                    </div>
+                    <div class="upi_app_icons">
+                      <p>WE ACCEPT ALL UPI APPS LIKE</p>
+                      <div class="icons">
+                        <img src="https://s3.rdbuz.com/Images/home/googlePay.svg" alt="GPay">
+                        <img src="https://s3.rdbuz.com/Images/home/phonePe.svg" alt="Phone Pe">
+                        <img src="https://s3.rdbuz.com/Images/home/paytm.svg" alt="PayTm">
+                        <img src="https://s3.rdbuz.com/Images/home/upi.svg" alt="UPI">
+                        <img src="https://s3.rdbuz.com/Images/home/amazonPay.svg" alt="Amazon Pay">
+                      </div>
+                      <p>and many more</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="upi_id">
+              <input type="radio" name="upi" id="upi_id"><label for="upi_id">Pay through UPI ID <img src="https://st.redbus.in/paas/images/v2/UPI.png" alt="UPI"></label>
+              <div class="lorem">
+                <p>Your UPI ID</p>
+                <div class="upiId">
+                  <div class="input">
+                    <input type="text" id="upiId" placeholder="Enter UPI ID">
+                    <button>VERIFY</button>
+                  </div>
+                  <button>PAY NOW</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="other_methods">
+          <h4>OTHER PAYMENT METHODS</h4>
+          <div class="payments">
+            <div class="credit_card">
+              <input type="radio" name="upi" id="credit_card">
+              <label for="credit_card">
+                Credit Card
+                <img src="https://st.redbus.in/paas/images/mobile/v2/visa.png" alt="VISA">
+                <img src="https://st.redbus.in/paas/images/mobile/v2/mastercard.png" alt="Master Card">
+                <img src="https://st.redbus.in/paas/images/web/v2/maestro.png" alt="Maestro">
+                <img src="https://st.redbus.in/paas/images/mobile/v2/rupay.png" alt="Rupay">
+              </label>
+              <div class="lorem">
+                <form class="payment-form">
+                  <label for="card-number">Credit Card Number</label>
+                  <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+          
+                  <label for="name-on-card">Name on Card</label>
+                  <input type="text" id="name-on-card" placeholder="Enter Name" required>
+          
+                  <div class="expiry-cvv">
+                    <div class="expiry">
+                      <label for="expiry-month">Expiry Date</label>
+                      <div class="expiry-fields">
+                        <select id="expiry-month" required>
+                          <option value="" disabled selected>Month</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>                          
+                        </select>
+                        <select id="expiry-year" required>
+                          <option value="" disabled selected>Year</option>
+                          <option value="2025">2025</option>
+                          <option value="2025">2026</option>
+                          <option value="2025">2027</option>
+                          <option value="2025">2028</option>
+                          <option value="2025">2029</option>
+                          <option value="2025">2030</option>
+                          <option value="others">others</option>
+                        </select>
+                      </div>
+                    </div>
+          
+                    <div class="cvv">
+                      <label for="cvv">CVV</label>
+                      <input type="password" id="cvv" placeholder="XXX" maxlength="3" required>
+                    </div>
+                  </div>
+          
+                  <button type="submit">Pay INR <span id="priceOnCard"></span></button>
+                </form>
+              </div>
+            </div>
+            <div class="debit_card">
+              <input type="radio" name="upi" id="debit_card">
+              <label for="debit_card">
+                Debit/ATM Card
+                <img src="https://st.redbus.in/paas/images/mobile/v2/visa.png" alt="VISA">
+                <img src="https://st.redbus.in/paas/images/mobile/v2/mastercard.png" alt="Master Card">
+                <img src="https://st.redbus.in/paas/images/web/v2/maestro.png" alt="Maestro">
+                <img src="https://st.redbus.in/paas/images/mobile/v2/rupay.png" alt="Rupay">
+              </label>
+              <div class="lorem">
+                <form class="payment-form">
+                  <label for="card-number">Debit Card Number</label>
+                  <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+          
+                  <label for="name-on-card">Name on Card</label>
+                  <input type="text" id="name-on-card" placeholder="Enter Name" required>
+          
+                  <div class="expiry-cvv">
+                    <div class="expiry">
+                      <label for="expiry-month">Expiry Date</label>
+                      <div class="expiry-fields">
+                        <select id="expiry-month" required>
+                          <option value="" disabled selected>Month</option>
+                          <option value="01">01</option>
+                          <option value="02">02</option>
+                          <option value="03">03</option>
+                          <option value="04">04</option>
+                          <option value="05">05</option>
+                          <option value="06">06</option>
+                          <option value="07">07</option>
+                          <option value="08">08</option>
+                          <option value="09">09</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>                          
+                        </select>
+                        <select id="expiry-year" required>
+                          <option value="" disabled selected>Year</option>
+                          <option value="2025">2025</option>
+                          <option value="2025">2026</option>
+                          <option value="2025">2027</option>
+                          <option value="2025">2028</option>
+                          <option value="2025">2029</option>
+                          <option value="2025">2030</option>
+                          <option value="others">others</option>
+                        </select>
+                      </div>
+                    </div>
+          
+                    <div class="cvv">
+                      <label for="cvv">CVV</label>
+                      <input type="password" id="cvv" placeholder="XXX" maxlength="3" required>
+                    </div>
+                  </div>
+          
+                  <button type="submit">Pay INR <span id="priceOnCard"></span></button>
+                </form>
+              </div>
+            </div>
+            <div class="net_banking">
+              <input type="radio" name="upi" id="net_banking">
+              <label for="net_banking">
+                Net Banking
+                <img src="https://st.redbus.in/paas/images/web/v2/sbi.png" alt="SBI">
+                <img src="https://st.redbus.in/paas/images/web/v2/hdfc.png" alt="HDFC">
+                <img src="https://st.redbus.in/paas/images/web/v2/icici.png" alt="ICICI">
+                <img src="https://st.redbus.in/paas/images/web/v2/axis.png" alt="Axis">
+                <img src="https://st.redbus.in/paas/images/web/v2/kotak.png" alt="Kotak">
+              </label>
+              <div class="lorem">
+              <div class="banks_logos">
+                <div><img src="https://st.redbus.in/paas/images/web/v2/sbi.png" alt="SBI"></div>
+                <div><img src="https://st.redbus.in/paas/images/web/v2/hdfc.png" alt="HDFC"></div>
+                <div><img src="https://st.redbus.in/paas/images/web/v2/icici.png" alt="ICICI"></div>
+                <div><img src="https://st.redbus.in/paas/images/web/v2/axis.png" alt="Axis"></div>
+                <div><img src="https://st.redbus.in/paas/images/web/v2/kotak.png" alt="Kotak"></div>
+              </div>
+              <button type="submit" id="net_banking_btn">Pay INR <span id="priceOnCard"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="simpl_pay" for="simple_pay">
+          <input type="radio" name="upi" id="simple_pay">
+          <label for="simple_pay">Simpl <img src="https://st.redbus.in/paas/images/web/v2/upi/simpl.png" alt="Simpl"></label>
+          <div class="lorem">
+            <div class="text">
+              <p><span class="bold">0% Interest</span> for non EMI plans</p>
+            <p><span class="bold">Multiple Credit Periods</span> starting from 15 days</p>
+            <p><span class="bold">No KYC, No Documents</span> Mobile no. based eligibility</p>
+            <p><span class="bold">Checkout via OTP</span> received on your mobile no.</p>
+            </div>
+            <button id="net_banking_btn">PROCEED</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rightMain">
+      <div class="ticket_details">
+        <div class="travels">
+          <span id="operator">TSRTC</span>
+          <span id="bus_type">AC sleeper</span>
+        </div>
+        <hr>
+        <div class="departure">
+          <div class="icon"><i class="fa-regular fa-calendar-days"></i></div>
+          <div class="tripDetails">
+            <div class="dateTime">
+              <p>Departure</p>
+              <span id="date">28/01/2025</span><span id="time">09:30</span>
+            </div>
+            <div class="seats">
+              <p>Seats</p>
+              <span id="seatCount">2</span>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="route">
+          <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="pickup_drop">
+            <div class="pickup">
+              <p>Boarding Point</p>
+              <p id="pickup">HYDERABAD</p>
+            </div>
+            <div class="drop">
+              <p>Dropping Point</p>
+              <p id="drop">KARIMNAGAR</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="passengers">
+          <div class="icon"><i class="fa-regular fa-circle-user"></i></div>
+          <div class="passengersDetails">
+            <span id="passengerName">SAGAR EMBADI</span>
+            <span id="passengerAgeGender">(22, M)</span>
+          </div>
+        </div>
+        <hr>
+        <div class="contacts">
+          <div class="icon"><i class="fa-regular fa-address-card"></i></div>
+          <div class="contactDetails">
+            <p>Your ticket will be sent to</p>
+            <span id="email">sagar@gmail.com</span>
+            <span id="phoneNo">9493004681</span>
+          </div>
+        </div>    
+      </div>
+      <div class="price_details">
+        <p>Total Payable</p>
+        <p>
+          <span>INR</span>
+          <span id="price">660</span>
+        </p>
+      </div>
+      <div class="verifiedBy">
+        <img src="https://s3.rdbuz.com/Images/webplatform/Common/Payment/master-card-secure-code.png" alt="MasterCard">
+        <img src="https://s3.rdbuz.com/Images/webplatform/Common/Payment/verified-by-visa.svg" alt="VISA">
+        <img src="https://s3.rdbuz.com/Images/webplatform/Common/Payment/verisign-secured.png" alt="Verisign Secured">
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
