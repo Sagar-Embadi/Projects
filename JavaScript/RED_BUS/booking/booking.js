@@ -76,9 +76,10 @@ bookingBtn.addEventListener("click",()=>{
         slider.className="animate__slideOutLeft"
         slider.style.right="0px"
     }
-    console.log(selectedSeats);
+    // console.log(selectedSeats);
     
     let passengerCards = document.getElementById("passengerInfoCards")
+    passengerCards.innerHTML=''
     selectedSeats.forEach((x, index) => {
         let card = document.createElement("div")
         card.className="cards"
@@ -92,24 +93,45 @@ bookingBtn.addEventListener("click",()=>{
           </div>
           <div class="nameDiv">
             <label for="name${index+1}">Name</label>
-          <input type="text" id="name${index+1}" placeholder="Name">
+            <input type="text" id="name${index+1}" placeholder="Name" required>
           </div>
           <div class="gender_age">
             <div class="gender">
               <p>Gender</p>
               <div>
-                <input type="radio" name="gender${index}" id="male${index+1}"> <label for="male${index+1}">Male</label>
-                <input type="radio" name="gender${index}" id="female${index+1}"> <label for="female${index+1}">Female</label>
+                <input type="radio" name="gender${index}" id="male${index+1}" required> <label for="male${index+1}">Male</label>
+                <input type="radio" name="gender${index}" id="female${index+1}" required> <label for="female${index+1}">Female</label>
               </div>
             </div>
             <div class="age">
               <p>AGE</p>
-              <input type="number"  id="age ${index+1}" placeholder="AGE">
+              <input type="number"  id="age${index+1}" required placeholder="AGE">
             </div>
           </div>
         `
         passengerCards.append(card)
     })
+})
+let slideForm = document.getElementById('passengersData')
+slideForm.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    const selectedSeats = Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.getAttribute("value"));
+    let PassengerDetails = []
+    selectedSeats.forEach((x,index)=>{
+    
+        let obj = {
+            name:document.getElementById(`name${index+1}`).value,
+            male : document.getElementById(`male${index+1}`).checked,
+            female : document.getElementById(`female${index+1}`).checked,
+            age : document.getElementById(`age${index+1}`).value,
+            email: document.getElementById(`email`).value,
+            phone: document.getElementById(`phone`).value
+        }
+        // console.log(obj);
+        PassengerDetails.push(obj)
+    })
+    localStorage.setItem("passengersInfo",JSON.stringify(PassengerDetails))
+    // console.log(PassengerDetails);
 })
 
 // document.getElementById("submit").addEventListener("click",(e)=>{

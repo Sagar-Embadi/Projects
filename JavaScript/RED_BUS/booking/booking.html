@@ -80,7 +80,7 @@
       <div class="contactDetails">
         <div class="info">Your ticket will be sent to these details</div>
           <label for="email">Email ID</label>
-          <input type="email" id="email" value=" " placeholder="Email">
+          <input type="email" id="email" value=" " required placeholder="Email">
           <label for="phone">Phone</label>
           <div class="phone-group">
           <select>
@@ -89,10 +89,10 @@
             <option>+44</option>
             <option>+61</option>
           </select>
-          <input type="text" id="phone" placeholder="Phone">
+          <input type="text" id="phone" placeholder="Phone" minlength="10" required>
           </div>
       </div>
-      <button id="submit">SUbmit</button>
+      <button id="submit" type="submit">SUbmit</button>
    </div>
   </form>
   <script src="./booking.js"></script>
