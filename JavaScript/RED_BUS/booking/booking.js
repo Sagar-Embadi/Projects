@@ -45,6 +45,8 @@ function confirmSelection() {
     const selectedSeats = Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.getAttribute("value"));
     document.getElementById("seatNo").innerText=`${selectedSeats.join(', ')}`
     document.getElementById("price").innerText=`${seatInfo.price * selectedSeats.length}`
+    // console.log(selectedSeats);
+    
 }
 
 document.getElementById("pickup").innerText=`${busData.origin.toUpperCase()}`
@@ -52,14 +54,71 @@ document.getElementById("arrival_time").innerText=`${seatInfo.arrival_time}`
 document.getElementById("drop").innerText=`${busData.destination}`
 document.getElementById("departure_time").innerText=`${seatInfo.departure_time}`
 
-let bookingBtn = document.getElementById("bookingBtn")
+document.querySelector(".seatcontainer").addEventListener("click",()=>{
+    let slider = document.getElementById("slide")
+    slider.style.display="none"
 
+})
+document.getElementById("closing").addEventListener("click",()=>{
+    let slider = document.getElementById("slide")
+    slider.style.display="none"
+    
+})
+
+let bookingBtn = document.getElementById("bookingBtn")
 bookingBtn.addEventListener("click",()=>{
     const selectedSeats = Array.from(document.querySelectorAll('.seat.selected')).map(seat => seat.getAttribute("value"));
     if (!selectedSeats.length){
         alert("Select minimum 1 seat to continue")
     }else{
-        location.href="../payment/payment.html"
-        
+        let slider = document.getElementById("slide")
+        slider.style.display="block"
+        slider.className="animate__slideOutLeft"
+        slider.style.right="0px"
     }
+    console.log(selectedSeats);
+    
+    let passengerCards = document.getElementById("passengerInfoCards")
+    selectedSeats.forEach((x, index) => {
+        let card = document.createElement("div")
+        card.className="cards"
+        card.innerHTML=`
+        <div class="passengerNo_seatNo">
+            <span>Passenger</span>
+            <span id="passengerNo">${index+1}</span>
+            <span>|</span>
+            <span>Seat</span>
+            <span id="seatNo">${x}</span>
+          </div>
+          <div class="nameDiv">
+            <label for="name${index+1}">Name</label>
+          <input type="text" id="name${index+1}" placeholder="Name">
+          </div>
+          <div class="gender_age">
+            <div class="gender">
+              <p>Gender</p>
+              <div>
+                <input type="radio" name="gender${index}" id="male${index+1}"> <label for="male${index+1}">Male</label>
+                <input type="radio" name="gender${index}" id="female${index+1}"> <label for="female${index+1}">Female</label>
+              </div>
+            </div>
+            <div class="age">
+              <p>AGE</p>
+              <input type="number"  id="age ${index+1}" placeholder="AGE">
+            </div>
+          </div>
+        `
+        passengerCards.append(card)
+    })
 })
+
+// document.getElementById("submit").addEventListener("click",(e)=>{
+//     e.preventDefault()
+//     let email = document.getElementById("email").value
+//     let phone = document.getElementById("phone").value
+//     let name = document.getElementById('name').value
+//     let age = document.getElementById('age').value
+//     let male = document.getElementById('male').checked
+//     console.log(email,phone,name,age, male);
+// })
+
