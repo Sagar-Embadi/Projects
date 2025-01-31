@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>redBus-eTicket</title>
+    <link rel="stylesheet" href="./ticket.css">
+</head>
+<body>
+    <div class="ticket">
+        <div class="header">
+            <div class="logo">redBus.in</div>
+            <div class="contact-info">
+                <p>Need help with your trip?</p>
+                <p><a href="tel:+919493004681">9493004681</a> | <a href="mailto:sagarembadi7@gmail.com">redBusBySagar@redbus.in</a></p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Journey Details</h3>
+            <table class="details-table">
+                <tr>
+                    <th>From</th>
+                    <td id="pickup"></td>
+                    <th>To</th>
+                    <td id="drop"></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td colspan="3" id="date">Sunday, December 15, 2013</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Bus Details</h3>
+            <table class="details-table">
+                <tr>
+                    <th>Operator</th>
+                    <td colspan="3" id="operator"></td>
+                </tr>
+                <tr>
+                    <th>Bus Type</th>
+                    <td id="type">Volvo A/C (2+2)</td>
+                    <th>Bus No:</th>
+                    <td id="busNo"></td>
+                </tr>
+                <tr>
+                    <th>Reporting Time</th>
+                    <td id="arrival_time">01:15 PM</td>
+                    <th>Departure Time</th>
+                    <td id="departure_time">01:30 PM</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- <div class="section">
+            <h3>Boarding Details</h3>
+            <table class="details-table">
+                <tr><th>Location</th><td>Lucknow Bus Stand</td></tr>
+                <tr><th>Landmark</th><td>Lucknow Bus Stand</td></tr>
+                <tr><th>Destination</th><td>Alambagh Bus Station</td></tr>
+            </table>
+        </div> -->
+
+        <div class="section">
+            <h3>Passenger Details</h3>
+            <table class="details-table" id="passengers_list">
+                <tr>
+                    <th>Name</th>
+                    <th>Age & Gender</th>
+                    <th>Seat No.</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Fare</h3>
+            <table class="details-table">
+                <tr><th>Total Fare</th><td>Rs. <span id="price">250</span> ( including of all TAX's & GST)</td></tr>
+            </table>
+        </div>
+        <p>Thank you for choosing RedBus. Have a safe journey!</p>
+        <button onclick="window.print()">Print Ticket</button>
+
+        <div class="terms">
+            <h3>Terms and Conditions</h3>
+            <p>1. redBus is only a bus ticket agent and does not operate bus services.</p>
+            <p>2. Passengers must provide a print or digital copy of the ticket to board.</p>
+            <p>3. Change in bus type by operator may result in fare adjustment.</p>
+        </div>
+
+        <div class="footer">
+            <p>For queries, contact: <a href="tel:+919493004681">9493004681</a> | <a href="mailto:sagarembadi7@gmail.com">redBusBySagar@redbus.in</a></p>
+        </div>
+
+    </div>
+    <script type="module" src="./ticket.js"></script>
+</body>
+</html>
