@@ -131,6 +131,7 @@ slideForm.addEventListener("submit",(e)=>{
         PassengerDetails.push(obj)
     })
     localStorage.setItem("passengersInfo",JSON.stringify(PassengerDetails))
+    location.href="../payment/payment.html"
     // console.log(PassengerDetails);
 })
 
