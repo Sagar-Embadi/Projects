@@ -7,21 +7,19 @@
   <title>Payment</title>
   <link rel="stylesheet" href="payment.css">
   <script src="https://kit.fontawesome.com/ea713ed858.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
   <div class="navbar">
     <div class="navRoute">
-      <span id="pickup">HYDERABAD</span>
-      <span>
-        <i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i>
-      </span>
-      </span>
-      <span id="droping">KARIMNAGAR</span>
+      <span id="pickup_nav"></span>
+      <span><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i><i class="fa-solid fa-xmarks-lines"></i></span>
+      <span id="drop_nav"></span>
     </div>
     <div class="navTimer">
-  Please Pay Within:</span>
-  <i class="fa-regular fa-clock"></i></span>
+      <span>Please Pay Within:</span>
+      <span><i class="fa-regular fa-clock"></i></span>
       <span id="timer"></span>
   minutes</span>
     </div>
@@ -29,8 +27,12 @@
   <div id="main">
     <div class="leftMain">
       <div class="couponcard">
-        <label for="coupon"><i class="fa-solid fa-ticket"></i> Have a Coupon Code? </label>
-        <input type="text" placeholder="ENTER OFFER CODE">
+        <form id="coupon">
+          <label for="coupons"><i class="fa-solid fa-ticket"></i> Have a Coupon Code? </label>
+          <input type="text" id="coupons" placeholder="ENTER OFFER CODE">
+          <button>CHECK</button>
+        </form>
+        <p id="couponError"></p>
       </div>
       <div class="Payment_methods">
         <h2>Choose Payment Methods</h2>
@@ -44,8 +46,10 @@
                 <p>SCAN QR CODE AND PAY</p>
                 <div class="scan_pay">
                   <div class="qr">
-                    <img src="./Screenshot_25-1-2025_124517_qr.io.jpeg" alt="QR CODE">
-                    <button>GENERATE QR CODE & PAY</button>
+                    <div id="qrcode">
+
+                    </div>
+                    <button id="QRBtn">GENERATE QR CODE & PAY</button>
                     <p>Generate QR code, scan it with any UPI App</p>
                   </div>
                   <div class="usage">
@@ -77,12 +81,13 @@
               <div class="lorem">
                 <p>Your UPI ID</p>
                 <div class="upiId">
-                  <div class="input">
+                  <form class="input" id="upi_payment">
                     <input type="text" id="upiId" placeholder="Enter UPI ID">
                     <button>VERIFY</button>
-                  </div>
-                  <button>PAY NOW</button>
+                  </form>
+                  <button id="UPIbtn">PAY NOW</button>
                 </div>
+                <p id="upiError"></p>
               </div>
             </div>
           </div>
@@ -105,13 +110,13 @@
                   <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
           
                   <label for="name-on-card">Name on Card</label>
-                  <input type="text" id="name-on-card" placeholder="Enter Name" required>
+                  <input type="text" id="name-on-card" placeholder="Enter Name" minlength="3" required>
           
                   <div class="expiry-cvv">
                     <div class="expiry">
-                      <label for="expiry-month">Expiry Date</label>
+                      <label for="credit_expiry_month">Expiry Date</label>
                       <div class="expiry-fields">
-                        <select id="expiry-month" required>
+                        <select id="credit_expiry_month" required>
                           <option value="" disabled selected>Month</option>
                           <option value="01">01</option>
                           <option value="02">02</option>
@@ -145,7 +150,7 @@
                     </div>
                   </div>
           
-                  <button type="submit">Pay INR <span id="priceOnCard"></span></button>
+                  <button type="submit" id="card-button">Pay INR <span id="priceOnCard"></span></button>
                 </form>
               </div>
             </div>
@@ -160,17 +165,17 @@
               </label>
               <div class="lorem">
                 <form class="payment-form">
-                  <label for="card-number">Debit Card Number</label>
-                  <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
+                  <label for="debit_card_number">Debit Card Number</label>
+                  <input type="text" id="debit_card_number" placeholder="XXXX XXXX XXXX XXXX" maxlength="16" required>
           
-                  <label for="name-on-card">Name on Card</label>
-                  <input type="text" id="name-on-card" placeholder="Enter Name" required>
+                  <label for="name_on_debit_card">Name on Card</label>
+                  <input type="text" id="name_on_debit_card" placeholder="Enter Name" required>
           
                   <div class="expiry-cvv">
                     <div class="expiry">
-                      <label for="expiry-month">Expiry Date</label>
+                      <label for="debit_expiry_month">Expiry Date</label>
                       <div class="expiry-fields">
-                        <select id="expiry-month" required>
+                        <select id="debit_expiry_month" required>
                           <option value="" disabled selected>Month</option>
                           <option value="01">01</option>
                           <option value="02">02</option>
@@ -185,7 +190,7 @@
                           <option value="11">11</option>
                           <option value="12">12</option>                          
                         </select>
-                        <select id="expiry-year" required>
+                        <select id="debit_expiry_year" required>
                           <option value="" disabled selected>Year</option>
                           <option value="2025">2025</option>
                           <option value="2025">2026</option>
@@ -199,12 +204,12 @@
                     </div>
           
                     <div class="cvv">
-                      <label for="cvv">CVV</label>
-                      <input type="password" id="cvv" placeholder="XXX" maxlength="3" required>
+                      <label for="debit_cvv">CVV</label>
+                      <input type="password" id="debit_cvv" placeholder="XXX" maxlength="3" required>
                     </div>
                   </div>
           
-                  <button type="submit">Pay INR <span id="priceOnCard"></span></button>
+                  <button type="submit" id="card_button">Pay INR <span id="priceOnCard"></span></button>
                 </form>
               </div>
             </div>
@@ -219,14 +224,16 @@
                 <img src="https://st.redbus.in/paas/images/web/v2/kotak.png" alt="Kotak">
               </label>
               <div class="lorem">
-              <div class="banks_logos">
-                <div><img src="https://st.redbus.in/paas/images/web/v2/sbi.png" alt="SBI"></div>
-                <div><img src="https://st.redbus.in/paas/images/web/v2/hdfc.png" alt="HDFC"></div>
-                <div><img src="https://st.redbus.in/paas/images/web/v2/icici.png" alt="ICICI"></div>
-                <div><img src="https://st.redbus.in/paas/images/web/v2/axis.png" alt="Axis"></div>
-                <div><img src="https://st.redbus.in/paas/images/web/v2/kotak.png" alt="Kotak"></div>
-              </div>
-              <button type="submit" id="net_banking_btn">Pay INR <span id="priceOnCard"></span></button>
+              <form class="payment-form">
+                <div class="banks_logos">
+                  <div><img src="https://st.redbus.in/paas/images/web/v2/sbi.png" alt="SBI"></div>
+                  <div><img src="https://st.redbus.in/paas/images/web/v2/hdfc.png" alt="HDFC"></div>
+                  <div><img src="https://st.redbus.in/paas/images/web/v2/icici.png" alt="ICICI"></div>
+                  <div><img src="https://st.redbus.in/paas/images/web/v2/axis.png" alt="Axis"></div>
+                  <div><img src="https://st.redbus.in/paas/images/web/v2/kotak.png" alt="Kotak"></div>
+                </div>
+                <button type="submit" >Pay INR <span id="priceOnCard"></span></button>
+              </form>
               </div>
             </div>
           </div>
@@ -258,11 +265,11 @@
           <div class="tripDetails">
             <div class="dateTime">
               <p>Departure</p>
-              <span id="date">28/01/2025</span><span id="time">09:30</span>
+              <span id="date">date</span><span id="time"></span>
             </div>
             <div class="seats">
               <p>Seats</p>
-              <span id="seatCount">2</span>
+              <span id="seatCount"></span>
             </div>
           </div>
         </div>
@@ -272,11 +279,11 @@
           <div class="pickup_drop">
             <div class="pickup">
               <p>Boarding Point</p>
-              <p id="pickup">HYDERABAD</p>
+              <p id="pickup"></p>
             </div>
             <div class="drop">
               <p>Dropping Point</p>
-              <p id="drop">KARIMNAGAR</p>
+              <p id="drop"></p>
             </div>
           </div>
         </div>
@@ -284,8 +291,7 @@
         <div class="passengers">
           <div class="icon"><i class="fa-regular fa-circle-user"></i></div>
           <div class="passengersDetails">
-            <span id="passengerName">SAGAR EMBADI</span>
-            <span id="passengerAgeGender">(22, M)</span>
+            
           </div>
         </div>
         <hr>
@@ -293,8 +299,8 @@
           <div class="icon"><i class="fa-regular fa-address-card"></i></div>
           <div class="contactDetails">
             <p>Your ticket will be sent to</p>
-            <span id="email">sagar@gmail.com</span>
-            <span id="phoneNo">9493004681</span>
+            <span id="email"></span>
+            <span id="phoneNo"></span>
           </div>
         </div>    
       </div>
@@ -302,7 +308,7 @@
         <p>Total Payable</p>
         <p>
           <span>INR</span>
-          <span id="price">660</span>
+          <span id="price"></span>
         </p>
       </div>
       <div class="verifiedBy">
@@ -312,6 +318,8 @@
       </div>
     </div>
   </div>
+  <script src="payment.js"></script>
+
 </body>
 
 </html>
