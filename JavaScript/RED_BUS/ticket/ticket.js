@@ -1,3 +1,6 @@
+import { date } from "../home/home.js";
+console.log(date);
+
 // import { today } from "../home/home.js"
 // Set the input's default value to today's date
 const today = new Date().toISOString().split('T')[0];
