@@ -24,7 +24,8 @@ trainTicket.addEventListener("click",()=>{
 })
 // Set the input's default value to today's date
 const today = new Date().toISOString().split('T')[0];
-document.getElementById('date').value = today;
+let todayDate = document.getElementById('date')
+todayDate.value = today;
 
 let data =[
     {
@@ -832,12 +833,14 @@ let data =[
       ]
     }
 ]
-    
+var date
 let route_selection=document.getElementById("route_selection")
 route_selection.addEventListener("submit",(e)=>{
   e.preventDefault()
   let from = document.getElementById('from').value.toLowerCase();
   let to = document.getElementById('to').value.toLowerCase();
+  date = todayDate.value;
+  console.log(date);  
   console.log(from);
   console.log(to);
   
@@ -857,10 +860,15 @@ data.forEach((x,index)=>{
   setTimeout(()=>{
     let bus_route=document.createElement("div")
   bus_route.innerHTML=`
-  <div id="route"><span>From:<br> ${x.origin.toUpperCase()}</span> <br><span>To: <br> ${x.destination.toUpperCase()}</span></div>
+  <div id="route">
+    <span>From:&emsp14; <span>${x.origin.toUpperCase()}</span></span><br>
+    <span>To: &emsp14;&emsp14;&emsp14;&emsp14; <span>${x.destination.toUpperCase()}</span></span>
+  </div>
   `
   buses.appendChild(bus_route)
-  },(index)*500)
+  },(index)*300)
   
 })
-    
+console.log(date);
+
+export {date}

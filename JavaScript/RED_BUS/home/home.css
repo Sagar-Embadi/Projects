@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor:default;
 }
 /* NAVBAR */
 header{
@@ -63,9 +64,10 @@ main{
 }
 #routing{
     background-image: url("https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp");
-    background-size:cover;
-    background-position: -20px 0px;
+    background-size:99vw;
+    /* background-position: -20px 0px; */
     text-align: center;
+    width: 99vw;
     height: 500px;
     padding: 50px;
 }
@@ -114,45 +116,219 @@ input{
     font-size: 20px;
     font-weight: bolder;
 }
-#scrollbar{
-    display: flex;
-    overflow: scroll hidden;
-    gap: 1.5rem;
-    scroll-behavior: smooth;
+.from_to{
+    height: 150px;
 }
-#scrollbar > div{
-    background-color: aquamarine;
-    width: 300px;
-    height: 300px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-h2{
+.from_to > h4{
     text-align: center;
-    padding: 30px;
+    padding: 10px;
+}
+#buses_info{
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding: 10px 20px;
+    box-shadow: 10px 0px 0px black;
 }
 #route{
-    padding: 5px 400px;
+    background-color: aliceblue;
+    border: 2px solid grey;
+    box-shadow: 2px 5px 5px black;
+    padding: 5px;
+    width: 200px;
+    /* display: flex; */
+    /* gap: 20px; */
+}
+#route:hover{
+    background-color: #d84e55a5;
+    border: 3px solid crimson;
+}
+#route > span > span{
+    width: 100px;
+    font-weight: 600;
+}
+#offers_section,#redTrain,#promoBuses{
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+#offers_div{
+    background-color: white;
+    width: 1100px;
+    padding: 30px;
+    border-radius: 3rem ;
+}
+#offers_div > h4{
+    margin-left: 40px;
+    font-weight: bolder;
+    font-family: cursive;
+}
+#scrollbar{
+    display: flex;
+    gap: 20px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding: 10px;
+}
+.cards{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 350px !important;
+    gap: 20px;
+    color: aliceblue;
+    border-radius: 2rem;
+}
+.cards > img{
+    width: 90px;
+    height: 90px;
+    border-radius: 5rem;
+}
+.card_content{
+    width: 160px;
+}
+.card_content > span{
+    background-color: #f1f1f153;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 10px;
+}
+.card_content > h5{
+    font-size: 18px;
+    padding: 5px 0px;
+    margin: 0%;
+}
+.card_content > p{
+    font-size: small;
+    margin: 0px;
+    padding: 5px 0px;
+}
+.card_content > h6{
+    display: inline-block;
+    background-color: #f1f1f153;
+    padding: 5px;
+    border: 3px dotted grey;
+    border-radius: 5px;
+    /* font-size: 10px; */
+}
+.card1{
+    background-color: navy;
+}
+.card2{
+    background: linear-gradient(to right,rgb(46, 55, 100),rgb(45, 103, 75), rgb(58, 135, 14));
+}
+.card3{
+    background: linear-gradient(to right, rgb(99, 3, 3),rgb(152, 34, 58));
+}
+.card4{
+    background: linear-gradient(to right, rgb(55, 146, 55) , rgb(90, 215, 90));
+}
+.card5{
+    background: linear-gradient(to right, rgb(5, 113, 167) , rgb(68, 227, 241));
+}
+.card6{
+    background: linear-gradient(to right, purple , rgb(229, 68, 241));
+}
+.redTrainDiv, .promo{
     display: flex;
     gap: 50px;
 }
-#route > span{
-    width: 200px;
+.redTrainDiv > .divContent{
+    width: 500px;
+}
+.divContent > h1{
+    font-weight: 400;
+    line-height: 60px;
+}
+.divContent > #redRail{
+    display: inline-block;
+    color: crimson;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 20px;
+    border-bottom: 2px solid crimson;
+    cursor: pointer;
+}
+.divContent > p{
+    padding: 15px 0px;
+    word-spacing: 1.3px;
+    margin: 0%;
+}
+.divContent > span{
+    display: block;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.redTrainDiv > img{
+    width: 500px;
+}
+.promo{
+    gap: 0px;
+    background-color: #fbca41;
+    border-radius: 3rem;
+}
+.promoImg{
+    width: 750px;
+}
+.promoImg > img{
+    width: 100%;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+.promo_content{
+    background-color: #233058;
+    color: white;
+    width: 400px;
+    border-radius: 3rem;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.features{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    align-content: center;
+   
+}
+.features > i{
+    font-size: 40px;
+}
+.features > div > h3{
+    font-size: 30px;
+    font-weight: 700;
+}
+.features > div > p{
+    font-size: 25px;
+}
+#TrainContent{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+    padding: 50px;
+    height: 600px;
+    color: white;
+    background-image: url("https://img.freepik.com/free-photo/beautiful-shot-train-motion-railway-station_181624-20815.jpg?t=st=1738648968~exp=1738652568~hmac=7f49031a82b35d0f70ce463110d829f32176fb6432a41911253792e53858d2ce&w=996");
+    background-size: cover;
+}
+#TrainContent > h2{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 2px;
+}
+#TrainContent > h1{
+    display: inline;
+    /* background-color: rgba(128, 128, 128, 0.557); */
+    font-size: 40px;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 2px;
 }
