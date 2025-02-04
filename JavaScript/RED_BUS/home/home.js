@@ -837,8 +837,8 @@ var date
 let route_selection=document.getElementById("route_selection")
 route_selection.addEventListener("submit",(e)=>{
   e.preventDefault()
-  let from = document.getElementById('from').value.toLowerCase();
-  let to = document.getElementById('to').value.toLowerCase();
+  let from = document.getElementById('from').value.toLowerCase().trim();
+  let to = document.getElementById('to').value.toLowerCase().trim();
   date = todayDate.value;
   console.log(date);  
   console.log(from);
