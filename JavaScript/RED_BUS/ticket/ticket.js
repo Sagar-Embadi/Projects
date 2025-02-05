@@ -1,5 +1,5 @@
-import { date } from "../home/home.js";
-console.log(date);
+// import { date } from "../home/home.js";
+// console.log(date);
 
 // import { today } from "../home/home.js"
 // Set the input's default value to today's date
@@ -27,7 +27,7 @@ passengersInfo.forEach(x => {
     passCard.innerHTML=`
             <td>${x.name}</td>
             <td>${x.age} (${gender})</td>
-            <td>seatNo</td>
+            <td>${x.seat}</td>
     `
     passDiv.appendChild(passCard)
 
