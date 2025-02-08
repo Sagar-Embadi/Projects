@@ -5,6 +5,7 @@
 }
 
 body {
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,10 +23,10 @@ body {
     border-radius: 10px;
     box-shadow: 10px 10px 16px rgba(0, 0, 0, 0.5);
     display: flex;
+    justify-content: center;
 }
 .container div{
-    height: 455px;
-    width: 350px;
+    width: 300px;
 }
 .container  div > img{
     width: 100%;
@@ -37,6 +38,9 @@ body {
     padding: 30px;
 }
 #login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 350px;
     margin-top: 50px;
 }
@@ -79,4 +83,14 @@ p{
 a {
     text-decoration: none;
     color: blue;
+}
+@media (max-width:550px){
+    .container div{
+        display: none;
+    }
+}
+@media (min-width:501px) and (max-width:700px) {
+    .container div{
+        width: 280px;
+    }    
 }
