@@ -21,7 +21,6 @@
 #sidebar{
     padding: 20px;
     width:20vw;
-    height: 100vh;
     background-color: #f1f1f1;
     display: flex;
     flex-direction: column;
@@ -68,6 +67,7 @@ box-shadow: 5px 5px 5px black;
 .rating_pricing{
     width: 25%;
     display: flex;
+    gap: 20px;
     justify-content: space-between;
 }
 .rating,.price{
@@ -114,4 +114,43 @@ color: #00796b;
 }
 .icons_btn > button:hover{
     background: #b71c1c;
+}
+@media (max-width:400px){
+    #route_title>h3{
+        font-size: 15px;
+    }
+    #body{
+        flex-direction: column;
+    }
+    #sidebar{
+        flex-direction: row;
+    }
+    .card{
+        width: 95vw;
+    }
+    .busDetails{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .operatorDetails,.timeDetails,.routeDetails{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .rating_pricing{
+        width: 70vw;
+    }
+}
+@media (min-width:401px) and (max-width:700px){
+    #route_title>h3{
+        font-size: 20px;
+    }
+    #body{
+        flex-direction: column;
+    }
+    #sidebar{
+        flex-direction: row;
+    }
+    .card{
+        width: 95vw;
+    }
 }
