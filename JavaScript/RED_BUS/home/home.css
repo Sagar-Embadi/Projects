@@ -22,7 +22,8 @@ header{
     gap: 20px;
     align-items: center;
 }
-#left_header > img{
+#left_header >a> img{
+    cursor: pointer;
     width: 5rem;
     height: 3rem;
     cursor: pointer;
@@ -64,20 +65,22 @@ main{
 }
 #routing{
     background-image: url("https://s3.rdbuz.com/images/webplatform/india/Homepage-header-2000.webp");
-    background-size:99vw;
+    background-size:100vw;
     /* background-position: -20px 0px; */
     text-align: center;
-    width: 99vw;
+    width: 100vw;
     height: 500px;
     padding: 50px;
 }
 #routing > h1{
     font-size: 30px;
+    font-weight: bold;
+    text-shadow:2px 2px #c8d2ef;
 }
 #route_selection_outer_div{
     margin: 80px auto;
     width: 70vw;
-    height: 100px;
+    /* height: 100px; */
     background-color: #fff;
     border-radius: 3rem;
     display: flex;
@@ -115,6 +118,9 @@ input{
     color: white;
     font-size: 20px;
     font-weight: bolder;
+}
+#route_selection_outer_div > button:active{
+    background-color: rgb(132, 21, 44);
 }
 .from_to{
     height: 150px;
@@ -275,8 +281,7 @@ input{
 }
 .promoImg > img{
     width: 100%;
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
+    border-radius: 3rem;
 }
 .promo_content{
     background-color: #233058;
@@ -331,4 +336,121 @@ input{
     font-weight: 800;
     font-family: 'Times New Roman', Times, serif;
     word-spacing: 2px;
+}
+@media (max-width: 400px) {
+    #left_header{
+        gap: 10px;
+    }
+    #space{
+        display: none ;
+    }
+    #routing{
+        padding: 30px;
+        height: auto;
+    }
+    #routing > h1{
+        font-size: 27px;
+    }
+    #route_selection_outer_div{
+        flex-direction: column;
+        margin: auto;
+        margin-top: 30px;
+    }
+    input{
+        width: 40vw;
+        height: 15px;
+    }
+    #route_selection_inner_div1,#route_selection_inner_div2,#route_selection_inner_div3{
+        padding: 10px 30px;
+    }
+    #route_selection_outer_div > button{
+        width: 70%;
+        padding: 10px;
+        border-radius: 2rem;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #offers_div{
+        width: 100vw;
+    }
+    .redTrainDiv{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .redTrainDiv > .divContent,.redTrainDiv > img, .promo_content{
+        width: 90vw;
+    }
+    .promoImg{
+        display: none;
+    }
+    
+}
+@media (min-width:401px) and (max-width:700px) {
+    img[alt="Red Bus Logo"] + div{
+        display: none;
+    }
+    #routing{
+        padding: 40px;
+        height: auto;
+    }
+    #routing > h1{
+        font-size: 30px;
+    }
+    #route_selection_outer_div{
+        flex-direction: column;
+        margin: auto;
+        margin-top: 30px;
+    }
+    input{
+        width: 40vw;
+        height: 15px;
+    }
+    #route_selection_inner_div1,#route_selection_inner_div2,#route_selection_inner_div3{
+        padding: 10px 40px;
+    }
+    #route_selection_outer_div > button{
+        width: 70%;
+        padding: 10px;
+        border-radius: 2rem;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+    #offers_div{
+        width: 90vw;
+    }
+    .redTrainDiv{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    .redTrainDiv > .divContent,.redTrainDiv > img{
+        width: 90vw;
+    }
+    .promo{
+        flex-direction: column;
+    }
+    .promoImg,.promo_content{
+        width: 85vw;
+    }
+}
+@media (min-width:701px) and (max-width:1100px){
+    #offers_div{
+        width: 90vw;
+    }
+    /* .redTrainDiv{
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    } */
+    .redTrainDiv > .divContent,.redTrainDiv > img{
+        width: 45vw;
+        object-fit: cover;
+    }
+    .promo{
+        flex-direction: column;
+    }
+    .promoImg,.promo_content{
+        width: 85vw;
+    }
 }
