@@ -15,7 +15,7 @@ let seatNo = 1
 rows.forEach((x) => {
     let seat = document.createElement("div")
     if (x == 'available') {
-        seat.innerHTML = `<i class="fa-solid fa-bed"></i>`
+        seat.innerHTML = `<i class="fa-solid fa-couch"></i>`
         seat.className = "seat"
         seat.setAttribute("title", `Seat No: ${seatNo}`)
         seat.setAttribute("value", `${seatNo}`)
@@ -23,7 +23,7 @@ rows.forEach((x) => {
     } else if (x == "aisle") {
         seat.className = "aisle"
     } else {
-        seat.innerHTML = ` <i class="fa-solid fa-bed"></i>`
+        seat.innerHTML = `<i class="fa-solid fa-couch"></i>`
         seat.classList = "seat unavailable"
         seat.setAttribute("title", `Seat No: ${seatNo}`)
         seat.setAttribute("value", `${seatNo}`)
@@ -120,6 +120,7 @@ slideForm.addEventListener("submit",(e)=>{
     selectedSeats.forEach((x,index)=>{
     
         let obj = {
+            seat:x,
             name:document.getElementById(`name${index+1}`).value,
             male : document.getElementById(`male${index+1}`).checked,
             female : document.getElementById(`female${index+1}`).checked,
