@@ -8,12 +8,15 @@
     z-index: 1;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    height: 4rem;
+    height: 5rem;
     background-color: crimson;
     color: gold;
     font-weight: bolder;
+    padding: 20px;
+    gap: 10px;
 }
 .navRoute{
     display: flex;
@@ -186,6 +189,7 @@ input[type="radio"]:checked~.lorem{
 }
 .upi_app_icons .icons{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 .icons img{
@@ -371,4 +375,94 @@ label[for='net_banking'] > img{
 }
 .verifiedBy > img{
     height: 30px;
+}
+@media (max-width:400px){
+    #main{
+        padding: 20px;
+    }
+    .leftMain,.rightMain{
+        position: relative;
+        left: 0px;
+        right: 0px;
+        width: 90vw;
+    }
+    .scan_pay{
+        flex-direction: column;
+    }
+    .lorem{
+        padding: 5px;
+    }
+    .qr,.usage{
+        width: 100%;
+        padding: 0px;
+    }
+    .upi_app_icons .icons{
+        gap: 10px;
+    }
+    .upiId{
+        flex-direction: column;
+    }
+    .banks_logos{
+        padding: 10px;
+        gap: 20px;
+    }
+    .banks_logos > div{
+        text-align: center;
+        width: 45%;
+        padding: 0px;
+    }
+    .banks_logos > div > img{
+        height: 20px;
+    }
+
+}
+@media (min-width:401px) and (max-width:700px){
+    #main{
+        padding: 40px;
+    }
+    .leftMain,.rightMain{
+        position: relative;
+        left: 0px;
+        right: 0px;
+        width: 90vw;
+    }
+    .scan_pay{
+        flex-direction: column;
+    }
+    .lorem{
+        padding: 5px;
+    }
+    .qr,.usage{
+        width: 100%;
+        padding: 0px;
+    }
+    .upi_app_icons .icons{
+        gap: 10px;
+    }
+    .upiId{
+        flex-direction: column;
+    }
+    .banks_logos{
+        padding: 10px;
+        gap: 20px;
+    }
+    .banks_logos > div{
+        width: 45%;
+        padding: 10px;
+    }
+    .banks_logos > div > img{
+        height: 20px;
+    }
+
+}
+@media (min-width:701px) and (max-width:1024px){
+    .leftMain{
+        left: 50px;
+    }
+    .rightMain{
+        right: 50px;
+    }
+    .banks_logos > div{
+        width: 45%;
+    }
 }
