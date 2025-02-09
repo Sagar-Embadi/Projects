@@ -840,9 +840,13 @@ route_selection.addEventListener("submit",(e)=>{
   let from = document.getElementById('from').value.toLowerCase().trim();
   let to = document.getElementById('to').value.toLowerCase().trim();
   date = todayDate.value;
-  console.log(date);  
-  console.log(from);
-  console.log(to);
+  let routeDetails ={
+    from: from,
+    to:  to,
+    date: date
+  }
+  localStorage.setItem("routeDetails",JSON.stringify(routeDetails))
+  
   
   
   if((data.find(x=>x.destination==to) && data.find(x=>x.origin==from))){
