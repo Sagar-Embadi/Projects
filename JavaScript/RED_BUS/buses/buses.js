@@ -57,7 +57,6 @@ function buses(type=null){
                 <i class="fa-solid fa-ticket"></i>
                 <i class="fa-solid fa-bus-simple"></i>
                 <i class="fa-solid fa-phone"></i>
-                <i class="fa-solid fa-kit-medical"></i>
             </div>
             <button id="booking">View Seats</button>
         </div>`
