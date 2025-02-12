@@ -112,6 +112,7 @@
 }
 .pickup_drop{
     display: flex;
+    align-items: center;
     gap: 20px;
     padding: 20px 15px;
 }
@@ -285,7 +286,7 @@
     color: white;
     border: none;
 }
-@media (max-width:450px){
+@media (max-width:426px){
     .topMainContainer{
         flex-direction: column;
         gap: 40px;
@@ -300,10 +301,17 @@
         width: 90%;
         height: auto;
     }
-    
+    .routeDiv .pickup, .routeDiv .drop{
+        flex-direction: column;
+        gap: 5px;
+    }
+    .icon{
+        gap: 40px;
+    }
 }
-@media (min-width:451px) and (max-width:770px) {
+@media (min-width:426px) and (max-width:725px) {
     .topMainContainer{
+        flex-direction: column;
         gap: 40px;
     }
     .legend{
