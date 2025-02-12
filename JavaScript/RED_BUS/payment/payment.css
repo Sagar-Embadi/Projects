@@ -377,6 +377,9 @@ label[for='net_banking'] > img{
     height: 30px;
 }
 @media (max-width:400px){
+    .navbar{
+        height: 6rem;
+    }
     #main{
         padding: 20px;
     }
@@ -385,6 +388,10 @@ label[for='net_banking'] > img{
         left: 0px;
         right: 0px;
         width: 90vw;
+    }
+    .couponcard  input{
+        flex-grow: 0;
+        width: 130px;
     }
     .scan_pay{
         flex-direction: column;
