@@ -103,9 +103,16 @@ document.querySelectorAll("#priceOnCard")[0].innerText=`${price}`
 document.querySelectorAll("#priceOnCard")[1].innerText=`${price}`
 document.querySelectorAll("#priceOnCard")[2].innerText=`${price}`
 
-function ticketPage(){ setInterval(()=>{
-    location.href="../ticket/ticket.html"
-},20000)}
+function ticketPage(){
+    setTimeout(()=>{
+        const spinner = document.getElementById('spinner');        
+    spinner.style.display = 'flex';
+    },3000)  
+    setTimeout(() => {
+        location.href="../ticket/ticket.html"
+      }, 8000);
+
+}
 
 document.getElementById("QRBtn").addEventListener("click",()=>{
    
