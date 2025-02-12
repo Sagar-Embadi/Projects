@@ -115,7 +115,7 @@ color: #00796b;
 .icons_btn > button:hover{
     background: #b71c1c;
 }
-@media (max-width:400px){
+@media (max-width:725px){
     #route_title>h3{
         font-size: 12px;
     }
@@ -137,10 +137,10 @@ color: #00796b;
         justify-content: space-between;
     }
     .rating_pricing{
-        width: 70vw;
+        width: 100%;
     }
 }
-@media (min-width:401px) and (max-width:700px){
+/* @media (min-width:426px) and (max-width:700px){
     #route_title>h3{
         font-size: 20px;
     }
@@ -153,4 +153,4 @@ color: #00796b;
     .card{
         width: 95vw;
     }
-}
+} */
