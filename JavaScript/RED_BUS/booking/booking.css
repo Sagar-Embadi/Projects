@@ -100,7 +100,7 @@
 #priceCard{
     border-radius:20px;
     width: 400px;
-    height: 350px;
+    height: auto;
     padding: 20px;
     box-shadow: 5px 5px 15px grey,-5px -5px 15px grey,-5px 5px 15px grey,5px -5px 15px grey;
 }
