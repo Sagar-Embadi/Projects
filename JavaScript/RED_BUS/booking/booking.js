@@ -51,7 +51,7 @@ function confirmSelection() {
 
 document.getElementById("pickup").innerText=`${busData.origin.toUpperCase()}`
 document.getElementById("arrival_time").innerText=`${seatInfo.arrival_time}`
-document.getElementById("drop").innerText=`${busData.destination}`
+document.getElementById("drop").innerText=`${busData.destination.toUpperCase()}`
 document.getElementById("departure_time").innerText=`${seatInfo.departure_time}`
 
 document.querySelector(".seatcontainer").addEventListener("click",()=>{
@@ -135,14 +135,4 @@ slideForm.addEventListener("submit",(e)=>{
     location.href="../payment/payment.html"
     // console.log(PassengerDetails);
 })
-
-// document.getElementById("submit").addEventListener("click",(e)=>{
-//     e.preventDefault()
-//     let email = document.getElementById("email").value
-//     let phone = document.getElementById("phone").value
-//     let name = document.getElementById('name').value
-//     let age = document.getElementById('age').value
-//     let male = document.getElementById('male').checked
-//     console.log(email,phone,name,age, male);
-// })
 
