@@ -73,7 +73,7 @@ coupon.addEventListener("submit",(e)=>{
     e.preventDefault()
     document.getElementById("couponError").innerText =""
     let couponCode = document.getElementById("coupons").value
-    console.log(couponCode);
+    // console.log(couponCode);
     price = (passengerData.length)*seatInfo.price
     if (couponCode === "SAGAR150"){
         price-=150
@@ -97,9 +97,15 @@ coupon.addEventListener("submit",(e)=>{
         
         new QRCode(document.getElementById("qrcode"), paymentLink);
     })
+    console.log(price);
+    localStorage.setItem("price",price)
 })
 document.getElementById("price").innerText=`${price}`
 document.querySelectorAll("#priceOnCard")[0].innerText=`${price}`
+console.log(price);
+localStorage.setItem("price",price)
+
+
 document.querySelectorAll("#priceOnCard")[1].innerText=`${price}`
 document.querySelectorAll("#priceOnCard")[2].innerText=`${price}`
 
